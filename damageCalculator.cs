@@ -212,7 +212,7 @@ namespace WOTV_FFBE
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string message = "A simple (for now) damage calculator made by Yurumates\nPlease join Rage.";
+            string message = "A simple (for now) damage calculator made by Yurumates\nAll damage results have a margin of error of around 1%.\nPlease join Rage.";
             string title = "About";
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Information);

@@ -99,7 +99,6 @@
             this.label27 = new System.Windows.Forms.Label();
             this.flatTypePenStat = new System.Windows.Forms.TextBox();
             this.typePenetrationStat = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.elemPenetrationStat = new System.Windows.Forms.TextBox();
             this.flatElemPenStat = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
@@ -727,15 +726,6 @@
             this.typePenetrationStat.Size = new System.Drawing.Size(36, 20);
             this.typePenetrationStat.TabIndex = 14;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(205, 160);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(27, 22);
-            this.button1.TabIndex = 60;
-            this.button1.Text = "...";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // elemPenetrationStat
             // 
             this.elemPenetrationStat.Location = new System.Drawing.Point(210, 330);
@@ -767,7 +757,6 @@
             this.Controls.Add(this.elemPenetrationStat);
             this.Controls.Add(this.flatElemPenStat);
             this.Controls.Add(this.label28);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.typePenetrationStat);
             this.Controls.Add(this.flatTypePenStat);
             this.Controls.Add(this.label27);
@@ -917,7 +906,6 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TextBox flatTypePenStat;
         private System.Windows.Forms.TextBox typePenetrationStat;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox elemPenetrationStat;
         private System.Windows.Forms.TextBox flatElemPenStat;
         private System.Windows.Forms.Label label28;
