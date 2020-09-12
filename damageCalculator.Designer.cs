@@ -86,7 +86,6 @@
             this.accuracyAndEvasionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.criticalChanceVsEnemyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.debuffSuccessChanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label26 = new System.Windows.Forms.Label();
             this.notesText = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
@@ -102,6 +101,10 @@
             this.elemPenetrationStat = new System.Windows.Forms.TextBox();
             this.flatElemPenStat = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.emeraldEchoInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.dataListBoxRightMenu.SuspendLayout();
             this.SuspendLayout();
@@ -136,6 +139,7 @@
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
+            "Arithmetician",
             "Assassin",
             "Black Mage",
             "Cleric",
@@ -576,7 +580,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolsToolStripMenuItem,
-            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
@@ -618,13 +622,6 @@
             this.debuffSuccessChanceToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.debuffSuccessChanceToolStripMenuItem.Text = "&Debuff Success Chance";
             this.debuffSuccessChanceToolStripMenuItem.Click += new System.EventHandler(this.debuffSuccessChanceToolStripMenuItem_Click);
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.aboutToolStripMenuItem.Text = "About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // label26
             // 
@@ -748,6 +745,34 @@
             this.label28.TabIndex = 63;
             this.label28.Text = "ELEMENT";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.emeraldEchoInfoToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click_1);
+            // 
+            // emeraldEchoInfoToolStripMenuItem
+            // 
+            this.emeraldEchoInfoToolStripMenuItem.Name = "emeraldEchoInfoToolStripMenuItem";
+            this.emeraldEchoInfoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.emeraldEchoInfoToolStripMenuItem.Text = "Emerald Echo Info";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // damageCalculator
             // 
@@ -891,7 +916,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem criticalChanceVsEnemyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem accuracyAndEvasionToolStripMenuItem;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox notesText;
@@ -909,5 +933,9 @@
         private System.Windows.Forms.TextBox elemPenetrationStat;
         private System.Windows.Forms.TextBox flatElemPenStat;
         private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem emeraldEchoInfoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }

@@ -106,6 +106,7 @@ namespace WOTV_FFBE
                     varDEX = 0.2;
                     varAGI = 0.3;
                     break;
+                case "Arithmetician":
                 case "Black Mage":
                 case "Cleric":
                 case "Knight of Grandshelt":
@@ -405,6 +406,14 @@ namespace WOTV_FFBE
         private void notesListBox_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             fillFields_Click(null, EventArgs.Empty);
+        }
+
+        private void aboutToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            string message = "A simple (for now) damage calculator made by Yurumates\nAll damage results have a margin of error of around 1%.\nVersion Ildyra";
+            string title = "About";
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Information);
         }
     }
 }
