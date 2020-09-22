@@ -99,6 +99,13 @@ namespace WOTV_FFBE
             double.TryParse(elementAdvantage.SelectedItem.ToString(), out double elementalAdvantageVal);
             elementalAdvantageVal /= 100;
 
+            double.TryParse(nicheBox.Text, out double nicheVal);
+            switch(comboBox1.SelectedItem)
+            {
+                case "Arithmetician": skillMultiplierVal += (nicheVal*5);
+                    break;
+            }
+
             switch (comboBox1.SelectedItem)
             {
                 case "Assassin":
@@ -150,6 +157,7 @@ namespace WOTV_FFBE
                     varLCK = 0.05;
                     break;
                 case "Knight":
+                case "Knight of Ruin":
                 case "Monk":
                 case "Samurai":
                 case "Soldier":
@@ -410,10 +418,49 @@ namespace WOTV_FFBE
 
         private void aboutToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            string message = "A simple (for now) damage calculator made by Yurumates\nAll damage results have a margin of error of around 1%.\nVersion Ildyra";
-            string title = "About";
+            string message = "A simple (for now) damage calculator made by Yurumates\nAll damage results have a margin of error of around 1%.";
+            string title = "About - Version El Grande Sterne";
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Information);
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == 0) //Arithmetician
+            {
+                nicheLabel.Text = "Enemy Height";
+                nicheLabel.Visible = true;
+                nicheBox.Visible = true;
+                nicheHelp.Visible = true;
+            }
+            else
+            {
+                nicheBox.Text = "";
+                nicheLabel.Visible = false;
+                nicheBox.Visible = false;
+                nicheHelp.Visible = false;
+            }
+        }
+
+        private void nicheHelp_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == 0) //Arithmetician
+            {
+                string message = "This textbox is mainly for the move 'Height-Based Water'. For Level 3/4 Watera/Waterga and Height 2/3 Holy, see wotv-calc for appropriate skill multipler values. Unlike 'Height-Based Water', they do not get a scaling increase. They get a flat increase. Therefore, you can just input the adjusted number on your own.";
+                string title = "Arithmetician Height Help";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Information);
+            }
+        }
+
+        private void emeraldEchoInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string message = "If the description of the ability says \"Bestow\", then it doesn't work with Emerald Echo.";
+            string title = "Emerald Echo Info";
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Information);
+        }
+
+        
     }
 }

@@ -86,6 +86,10 @@
             this.accuracyAndEvasionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.criticalChanceVsEnemyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.debuffSuccessChanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.emeraldEchoInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label26 = new System.Windows.Forms.Label();
             this.notesText = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
@@ -101,10 +105,9 @@
             this.elemPenetrationStat = new System.Windows.Forms.TextBox();
             this.flatElemPenStat = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.emeraldEchoInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.nicheLabel = new System.Windows.Forms.Label();
+            this.nicheBox = new System.Windows.Forms.TextBox();
+            this.nicheHelp = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.dataListBoxRightMenu.SuspendLayout();
             this.SuspendLayout();
@@ -152,6 +155,7 @@
             "Holy Knight",
             "Knight",
             "Knight of Grandshelt",
+            "Knight of Ruin",
             "Lancer",
             "Lord",
             "Machinist",
@@ -181,6 +185,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(142, 21);
             this.comboBox1.TabIndex = 4;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // dexStat
             // 
@@ -623,6 +628,35 @@
             this.debuffSuccessChanceToolStripMenuItem.Text = "&Debuff Success Chance";
             this.debuffSuccessChanceToolStripMenuItem.Click += new System.EventHandler(this.debuffSuccessChanceToolStripMenuItem_Click);
             // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.emeraldEchoInfoToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // emeraldEchoInfoToolStripMenuItem
+            // 
+            this.emeraldEchoInfoToolStripMenuItem.Name = "emeraldEchoInfoToolStripMenuItem";
+            this.emeraldEchoInfoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.emeraldEchoInfoToolStripMenuItem.Text = "Emerald Echo Info";
+            this.emeraldEchoInfoToolStripMenuItem.Click += new System.EventHandler(this.emeraldEchoInfoToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click_1);
+            // 
             // label26
             // 
             this.label26.AutoSize = true;
@@ -746,39 +780,45 @@
             this.label28.Text = "ELEMENT";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // helpToolStripMenuItem
+            // nicheLabel
             // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.emeraldEchoInfoToolStripMenuItem,
-            this.toolStripSeparator1,
-            this.aboutToolStripMenuItem});
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
+            this.nicheLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.nicheLabel.Location = new System.Drawing.Point(203, 183);
+            this.nicheLabel.Name = "nicheLabel";
+            this.nicheLabel.Size = new System.Drawing.Size(73, 15);
+            this.nicheLabel.TabIndex = 64;
+            this.nicheLabel.Text = "Niche";
+            this.nicheLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.nicheLabel.Visible = false;
             // 
-            // aboutToolStripMenuItem
+            // nicheBox
             // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.aboutToolStripMenuItem.Text = "About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click_1);
+            this.nicheBox.Location = new System.Drawing.Point(202, 161);
+            this.nicheBox.Name = "nicheBox";
+            this.nicheBox.Size = new System.Drawing.Size(56, 20);
+            this.nicheBox.TabIndex = 65;
+            this.nicheBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nicheBox.Visible = false;
             // 
-            // emeraldEchoInfoToolStripMenuItem
+            // nicheHelp
             // 
-            this.emeraldEchoInfoToolStripMenuItem.Name = "emeraldEchoInfoToolStripMenuItem";
-            this.emeraldEchoInfoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.emeraldEchoInfoToolStripMenuItem.Text = "Emerald Echo Info";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.nicheHelp.Location = new System.Drawing.Point(258, 160);
+            this.nicheHelp.Name = "nicheHelp";
+            this.nicheHelp.Size = new System.Drawing.Size(22, 22);
+            this.nicheHelp.TabIndex = 66;
+            this.nicheHelp.Text = "?";
+            this.nicheHelp.UseVisualStyleBackColor = true;
+            this.nicheHelp.Visible = false;
+            this.nicheHelp.Click += new System.EventHandler(this.nicheHelp_Click);
             // 
             // damageCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(437, 574);
+            this.Controls.Add(this.nicheHelp);
+            this.Controls.Add(this.nicheBox);
+            this.Controls.Add(this.nicheLabel);
             this.Controls.Add(this.elemPenetrationStat);
             this.Controls.Add(this.flatElemPenStat);
             this.Controls.Add(this.label28);
@@ -937,5 +977,8 @@
         private System.Windows.Forms.ToolStripMenuItem emeraldEchoInfoToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.Label nicheLabel;
+        private System.Windows.Forms.TextBox nicheBox;
+        private System.Windows.Forms.Button nicheHelp;
     }
 }
