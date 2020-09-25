@@ -108,6 +108,7 @@
             this.nicheLabel = new System.Windows.Forms.Label();
             this.nicheBox = new System.Windows.Forms.TextBox();
             this.nicheHelp = new System.Windows.Forms.Button();
+            this.effectiveHPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.dataListBoxRightMenu.SuspendLayout();
             this.SuspendLayout();
@@ -599,7 +600,8 @@
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.accuracyAndEvasionToolStripMenuItem,
             this.criticalChanceVsEnemyToolStripMenuItem,
-            this.debuffSuccessChanceToolStripMenuItem});
+            this.debuffSuccessChanceToolStripMenuItem,
+            this.effectiveHPToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.toolsToolStripMenuItem.Text = "&Tools";
@@ -641,19 +643,19 @@
             // emeraldEchoInfoToolStripMenuItem
             // 
             this.emeraldEchoInfoToolStripMenuItem.Name = "emeraldEchoInfoToolStripMenuItem";
-            this.emeraldEchoInfoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.emeraldEchoInfoToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.emeraldEchoInfoToolStripMenuItem.Text = "Emerald Echo Info";
             this.emeraldEchoInfoToolStripMenuItem.Click += new System.EventHandler(this.emeraldEchoInfoToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(167, 6);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click_1);
             // 
@@ -810,6 +812,13 @@
             this.nicheHelp.UseVisualStyleBackColor = true;
             this.nicheHelp.Visible = false;
             this.nicheHelp.Click += new System.EventHandler(this.nicheHelp_Click);
+            // 
+            // effectiveHPToolStripMenuItem
+            // 
+            this.effectiveHPToolStripMenuItem.Name = "effectiveHPToolStripMenuItem";
+            this.effectiveHPToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.effectiveHPToolStripMenuItem.Text = "&Effective HP";
+            this.effectiveHPToolStripMenuItem.Click += new System.EventHandler(this.effectiveHPToolStripMenuItem_Click);
             // 
             // damageCalculator
             // 
@@ -980,5 +989,6 @@
         private System.Windows.Forms.Label nicheLabel;
         private System.Windows.Forms.TextBox nicheBox;
         private System.Windows.Forms.Button nicheHelp;
+        private System.Windows.Forms.ToolStripMenuItem effectiveHPToolStripMenuItem;
     }
 }

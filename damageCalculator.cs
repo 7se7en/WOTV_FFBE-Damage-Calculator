@@ -78,9 +78,8 @@ namespace WOTV_FFBE
             double.TryParse(penetrationStat.Text, out double penetrationVal);
             penetrationVal = (100 - penetrationVal)/100;
             double.TryParse(DEForSPRStat.Text, out double DEForSPRval);
-            //Don't know if Protect/Shell goes before or after penetration. Will put before for now.
             double.TryParse(protectShellStat.Text, out double protectShellVal);
-            DEForSPRval += protectShellVal;
+            protectShellVal = (100 - protectShellVal) / 100;
             //Also don't know if DEF debuffs go before percentage-based debuffs. Will put before for now as well!
             double.TryParse(flatPenStat.Text, out double flatPenVal);
             DEForSPRval -= flatPenVal;
@@ -189,17 +188,17 @@ namespace WOTV_FFBE
             double totalMainStat = mainStatVal + dexVal + agiVal + luckVal;
             double totalMainMultiplier = skillMultiplierVal + damageTypeUpVal + elementTypeUpVal + totalKillerVal;
 
-            double finalValue = totalMainStat * (totalMainMultiplier/100) * damageTypeResistanceVal * elementTypeResistanceVal * DEForSPRval * singleAreaResistanceVal * BRVval * elementalAdvantageVal;
+            double finalValue = totalMainStat * (totalMainMultiplier/100) * damageTypeResistanceVal * elementTypeResistanceVal * DEForSPRval * protectShellVal * singleAreaResistanceVal * BRVval * elementalAdvantageVal;
             BRVdamage.Text = Math.Truncate(finalValue).ToString();
-            finalValue = totalMainStat * (totalMainMultiplier / 100) * damageTypeResistanceVal * elementTypeResistanceVal * DEForSPRval * singleAreaResistanceVal * totalFTHval * elementalAdvantageVal;
+            finalValue = totalMainStat * (totalMainMultiplier / 100) * damageTypeResistanceVal * elementTypeResistanceVal * DEForSPRval * protectShellVal * singleAreaResistanceVal * totalFTHval * elementalAdvantageVal;
             FTHdamage.Text = Math.Truncate(finalValue).ToString();
 
             //Add Critical Damage Up because now we're calculating damage if the attack were a crit.
             totalMainMultiplier += criticalDamageUpVal;
             //Second verse same as the first
-            finalValue = totalMainStat * (totalMainMultiplier / 100) * damageTypeResistanceVal * elementTypeResistanceVal * DEForSPRval * singleAreaResistanceVal * BRVval * elementalAdvantageVal;
+            finalValue = totalMainStat * (totalMainMultiplier / 100) * damageTypeResistanceVal * elementTypeResistanceVal * DEForSPRval * protectShellVal * singleAreaResistanceVal * BRVval * elementalAdvantageVal;
             BRVdamageCrit.Text = Math.Truncate(finalValue).ToString();
-            finalValue = totalMainStat * (totalMainMultiplier / 100) * damageTypeResistanceVal * elementTypeResistanceVal * DEForSPRval * singleAreaResistanceVal * totalFTHval * elementalAdvantageVal;
+            finalValue = totalMainStat * (totalMainMultiplier / 100) * damageTypeResistanceVal * elementTypeResistanceVal * DEForSPRval * protectShellVal * singleAreaResistanceVal * totalFTHval * elementalAdvantageVal;
             FTHdamageCrit.Text = Math.Truncate(finalValue).ToString();
         }
 
@@ -419,7 +418,7 @@ namespace WOTV_FFBE
         private void aboutToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             string message = "A simple (for now) damage calculator made by Yurumates\nAll damage results have a margin of error of around 1%.";
-            string title = "About - Version El Grande Sterne";
+            string title = "About - Version El Grande Sterne 2";
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Information);
         }
@@ -461,6 +460,10 @@ namespace WOTV_FFBE
             DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Information);
         }
 
-        
+        private void effectiveHPToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            effectiveHP effectiveHP = new effectiveHP();
+            effectiveHP.Show();
+        }
     }
 }

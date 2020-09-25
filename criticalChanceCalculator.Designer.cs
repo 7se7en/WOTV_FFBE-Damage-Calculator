@@ -64,21 +64,23 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(90, 12);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(82, 20);
+            this.textBox1.Size = new System.Drawing.Size(49, 20);
             this.textBox1.TabIndex = 0;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(90, 64);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(82, 20);
+            this.textBox2.Size = new System.Drawing.Size(49, 20);
             this.textBox2.TabIndex = 2;
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(12, 116);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(160, 72);
+            this.button1.Size = new System.Drawing.Size(127, 72);
             this.button1.TabIndex = 4;
             this.button1.Text = "&Calculate";
             this.button1.UseVisualStyleBackColor = true;
@@ -86,16 +88,18 @@
             // 
             // result
             // 
+            this.result.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.result.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.result.Location = new System.Drawing.Point(178, 12);
+            this.result.Location = new System.Drawing.Point(145, 12);
             this.result.Name = "result";
-            this.result.Size = new System.Drawing.Size(228, 98);
+            this.result.Size = new System.Drawing.Size(226, 98);
             this.result.TabIndex = 38;
             this.result.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(178, 116);
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label3.Location = new System.Drawing.Point(143, 116);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(228, 72);
             this.label3.TabIndex = 39;
@@ -117,15 +121,17 @@
             // 
             this.textBox3.Location = new System.Drawing.Point(90, 38);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(82, 20);
+            this.textBox3.Size = new System.Drawing.Size(49, 20);
             this.textBox3.TabIndex = 1;
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(90, 90);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(82, 20);
+            this.textBox4.Size = new System.Drawing.Size(49, 20);
             this.textBox4.TabIndex = 3;
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
@@ -140,7 +146,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(418, 200);
+            this.ClientSize = new System.Drawing.Size(383, 200);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox3);
