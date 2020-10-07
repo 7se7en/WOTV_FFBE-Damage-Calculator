@@ -86,6 +86,7 @@
             this.accuracyAndEvasionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.criticalChanceVsEnemyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.debuffSuccessChanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.effectiveHPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.emeraldEchoInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -108,7 +109,6 @@
             this.nicheLabel = new System.Windows.Forms.Label();
             this.nicheBox = new System.Windows.Forms.TextBox();
             this.nicheHelp = new System.Windows.Forms.Button();
-            this.effectiveHPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.dataListBoxRightMenu.SuspendLayout();
             this.SuspendLayout();
@@ -156,6 +156,7 @@
             "Holy Knight",
             "Knight",
             "Knight of Grandshelt",
+            "Knight of Grandshelt (Ice)",
             "Knight of Ruin",
             "Lancer",
             "Lord",
@@ -176,6 +177,7 @@
             "Sword Saint",
             "Thief",
             "Time Mage",
+            "Valkyrie",
             "Viking",
             "Warrior",
             "Warrior of Light",
@@ -630,6 +632,13 @@
             this.debuffSuccessChanceToolStripMenuItem.Text = "&Debuff Success Chance";
             this.debuffSuccessChanceToolStripMenuItem.Click += new System.EventHandler(this.debuffSuccessChanceToolStripMenuItem_Click);
             // 
+            // effectiveHPToolStripMenuItem
+            // 
+            this.effectiveHPToolStripMenuItem.Name = "effectiveHPToolStripMenuItem";
+            this.effectiveHPToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.effectiveHPToolStripMenuItem.Text = "&Effective HP";
+            this.effectiveHPToolStripMenuItem.Click += new System.EventHandler(this.effectiveHPToolStripMenuItem_Click);
+            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -643,19 +652,19 @@
             // emeraldEchoInfoToolStripMenuItem
             // 
             this.emeraldEchoInfoToolStripMenuItem.Name = "emeraldEchoInfoToolStripMenuItem";
-            this.emeraldEchoInfoToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.emeraldEchoInfoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.emeraldEchoInfoToolStripMenuItem.Text = "Emerald Echo Info";
             this.emeraldEchoInfoToolStripMenuItem.Click += new System.EventHandler(this.emeraldEchoInfoToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(167, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click_1);
             // 
@@ -812,13 +821,6 @@
             this.nicheHelp.UseVisualStyleBackColor = true;
             this.nicheHelp.Visible = false;
             this.nicheHelp.Click += new System.EventHandler(this.nicheHelp_Click);
-            // 
-            // effectiveHPToolStripMenuItem
-            // 
-            this.effectiveHPToolStripMenuItem.Name = "effectiveHPToolStripMenuItem";
-            this.effectiveHPToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
-            this.effectiveHPToolStripMenuItem.Text = "&Effective HP";
-            this.effectiveHPToolStripMenuItem.Click += new System.EventHandler(this.effectiveHPToolStripMenuItem_Click);
             // 
             // damageCalculator
             // 

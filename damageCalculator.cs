@@ -105,6 +105,7 @@ namespace WOTV_FFBE
                     break;
             }
 
+            // Some jobs add other stats into your damage. The follow code sets the values of the multipliers from 1 to whatever it need be.
             switch (comboBox1.SelectedItem)
             {
                 case "Assassin":
@@ -156,6 +157,7 @@ namespace WOTV_FFBE
                     varLCK = 0.05;
                     break;
                 case "Knight":
+                case "Knight of Grandshelt (Ice)":
                 case "Knight of Ruin":
                 case "Monk":
                 case "Samurai":
@@ -165,6 +167,7 @@ namespace WOTV_FFBE
                     varMAIN = 1.2;
                     break;
                 case "Lancer":
+                case "Valkyrie":
                     varDEX = 0.2;
                     varAGI = 0.1;
                     varLCK = 0.15;
@@ -223,7 +226,7 @@ namespace WOTV_FFBE
             string message = "A simple (for now) damage calculator made by Yurumates\nAll damage results have a margin of error of around 1%.\nPlease join Rage.";
             string title = "About";
             MessageBoxButtons buttons = MessageBoxButtons.OK;
-            DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Information);
+            _ = MessageBox.Show(message, title, buttons, MessageBoxIcon.Information);
         }
 
         private void accuracyAndEvasionToolStripMenuItem_Click(object sender, EventArgs e)
@@ -287,7 +290,7 @@ namespace WOTV_FFBE
             }
             catch (Exception e)
             {
-
+                Console.WriteLine(e);
             }
         }
 
@@ -418,9 +421,9 @@ namespace WOTV_FFBE
         private void aboutToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             string message = "A simple (for now) damage calculator made by Yurumates\nAll damage results have a margin of error of around 1%.";
-            string title = "About - Version El Grande Sterne 2";
+            string title = "About - Version MONT, THE BLOODLINE! featuring Lass";
             MessageBoxButtons buttons = MessageBoxButtons.OK;
-            DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Information);
+            _ = MessageBox.Show(message, title, buttons, MessageBoxIcon.Information);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -445,10 +448,10 @@ namespace WOTV_FFBE
         {
             if (comboBox1.SelectedIndex == 0) //Arithmetician
             {
-                string message = "This textbox is mainly for the move 'Height-Based Water'. For Level 3/4 Watera/Waterga and Height 2/3 Holy, see wotv-calc for appropriate skill multipler values. Unlike 'Height-Based Water', they do not get a scaling increase. They get a flat increase. Therefore, you can just input the adjusted number on your own.";
+                string message = "This textbox is mainly for the move 'Height-Based' magic specifically. For Level 3/4 and Height 2/3 spells, NOT Height-Based, see wotv-calc for appropriate skill multipler values. Unlike 'Height-Based' magic, they do not get a scaling increase. They get a flat increase. Therefore, you can just input the adjusted number on your own.";
                 string title = "Arithmetician Height Help";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
-                DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Information);
+                _ = MessageBox.Show(message, title, buttons, MessageBoxIcon.Information);
             }
         }
 
@@ -457,7 +460,7 @@ namespace WOTV_FFBE
             string message = "If the description of the ability says \"Bestow\", then it doesn't work with Emerald Echo.";
             string title = "Emerald Echo Info";
             MessageBoxButtons buttons = MessageBoxButtons.OK;
-            DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Information);
+            _ = MessageBox.Show(message, title, buttons, MessageBoxIcon.Information);
         }
 
         private void effectiveHPToolStripMenuItem_Click(object sender, EventArgs e)
