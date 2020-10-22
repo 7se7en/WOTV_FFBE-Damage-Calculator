@@ -98,6 +98,12 @@
     <Compile Include="accuracyAndEvasion.Designer.cs">
       <DependentUpon>accuracyAndEvasion.cs</DependentUpon>
     </Compile>
+    <Compile Include="characterBuilder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="characterBuilder.Designer.cs">
+      <DependentUpon>characterBuilder.cs</DependentUpon>
+    </Compile>
     <Compile Include="criticalChanceCalculator.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,12 @@
     </Compile>
     <Compile Include="damageCalculator.Designer.cs">
       <DependentUpon>damageCalculator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="databaseCreator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="databaseCreator.Designer.cs">
+      <DependentUpon>databaseCreator.cs</DependentUpon>
     </Compile>
     <Compile Include="debuffSuccessChance.cs">
       <SubType>Form</SubType>
@@ -127,11 +139,17 @@
     <EmbeddedResource Include="accuracyAndEvasion.resx">
       <DependentUpon>accuracyAndEvasion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="characterBuilder.resx">
+      <DependentUpon>characterBuilder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="criticalChanceCalculator.resx">
       <DependentUpon>criticalChanceCalculator.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="damageCalculator.resx">
       <DependentUpon>damageCalculator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="databaseCreator.resx">
+      <DependentUpon>databaseCreator.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="debuffSuccessChance.resx">
       <DependentUpon>debuffSuccessChance.cs</DependentUpon>
@@ -165,73 +183,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
-    <None Include="Resources\Statusconditionicon_slow.png" />
-    <None Include="Resources\Statusconditionicon_stop.png" />
-    <None Include="Resources\Statusconditionicon_stan.png" />
-    <None Include="Resources\Statusconditionicon_sleep.png" />
-    <None Include="Resources\Statusconditionicon_poison.png" />
-    <None Include="Resources\Statusconditionicon_petrification.png" />
-    <None Include="Resources\Statusconditionicon_paralysis.png" />
-    <None Include="Resources\Statusconditionicon_mute.png" />
-    <None Include="Resources\Statusconditionicon_frog.png" />
-    <None Include="Resources\Statusconditionicon_doom.png" />
-    <None Include="Resources\Statusconditionicon_dontmove.png" />
-    <None Include="Resources\Statusconditionicon_dontaction.png" />
-    <None Include="Resources\Statusconditionicon_confusion.png" />
-    <None Include="Resources\Statusconditionicon_charm.png" />
-    <None Include="Resources\Statusconditionicon_blinded.png" />
-    <None Include="Resources\Statusconditionicon_berserk.png" />
-    <None Include="Resources\Statusattackicon_none_slash.png" />
-    <None Include="Resources\Statusattackicon_none_shot.png" />
-    <None Include="Resources\Statusattackicon_none_pierce.png" />
-    <None Include="Resources\Statusattackicon_none_magic.png" />
-    <None Include="Resources\Statusattackicon_none_blow.png" />
-    <None Include="Resources\Rarityicon_n.png" />
-    <None Include="Resources\Rarityicon_mr.png" />
-    <None Include="Resources\Element_icon_Dark.png" />
-    <None Include="Resources\Element_icon_Wind.png" />
-    <None Include="Resources\Element_icon_Water.png" />
-    <None Include="Resources\Element_icon_None.png" />
-    <None Include="Resources\Element_icon_Ice.png" />
-    <None Include="Resources\Element_icon_Fire.png" />
-    <None Include="Resources\Element_icon_Earth.png" />
-    <None Include="Resources\Element_icon_Light.png" />
-    <None Include="Resources\Element_icon_Thunder.png" />
-    <None Include="Resources\Hani_1.jpg" />
-    <None Include="Resources\Hani_2.jpg" />
-    <None Include="Resources\Hani_3.jpg" />
-    <None Include="Resources\Hani_4.jpg" />
-    <None Include="Resources\Hani_5.jpg" />
-    <None Include="Resources\Hani_6.jpg" />
-    <None Include="Resources\Hani_7.jpg" />
-    <None Include="Resources\Hani_8.jpg" />
-    <None Include="Resources\Hani_9.jpg" />
-    <None Include="Resources\Hani_10.jpg" />
-    <None Include="Resources\Hani_11.jpg" />
-    <None Include="Resources\Hani_12.jpg" />
-    <None Include="Resources\Hani_13.jpg" />
-    <None Include="Resources\Hani_14.jpg" />
-    <None Include="Resources\Hani_15.jpg" />
-    <None Include="Resources\Hani_16.jpg" />
-    <None Include="Resources\Hani_17.jpg" />
-    <None Include="Resources\Hani_18.jpg" />
-    <None Include="Resources\Hani_19.jpg" />
-    <None Include="Resources\Hani_20.jpg" />
-    <None Include="Resources\Hani_21.jpg" />
-    <None Include="Resources\Hani_22.jpg" />
-    <None Include="Resources\Hani_23.jpg" />
-    <None Include="Resources\Hani_24.jpg" />
-    <None Include="Resources\Hani_25.jpg" />
-    <None Include="Resources\Hani_26.jpg" />
-    <None Include="Resources\Hani_27.jpg" />
-    <None Include="Resources\Hani_28.jpg" />
-    <None Include="Resources\Hani_32.jpg" />
-    <None Include="Resources\Hani_33.jpg" />
-    <None Include="Resources\2.png" />
-    <Content Include="Resources\Rarityicon_r.png" />
-    <Content Include="Resources\Rarityicon_sr.png" />
-    <Content Include="Resources\Rarityicon_ur.png" />
-    <None Include="Resources\1.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -244,6 +195,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\System.Data.SQLite.Core.1.0.112.1\build\net40\System.Data.SQLite.Core.targets" Condition="Exists('packages\System.Data.SQLite.Core.1.0.112.1\build\net40\System.Data.SQLite.Core.targets')" />

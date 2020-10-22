@@ -98,6 +98,7 @@ namespace WOTV_FFBE
             double.TryParse(elementAdvantage.SelectedItem.ToString(), out double elementalAdvantageVal);
             elementalAdvantageVal /= 100;
 
+            // Niche calculations for case-by-case scenarios
             double.TryParse(nicheBox.Text, out double nicheVal);
             switch(comboBox1.SelectedItem)
             {
@@ -141,6 +142,7 @@ namespace WOTV_FFBE
                 case "Lord":
                 case "Red Mage (ATK)":
                 case "Red Mage (Sword MAG)":
+                case "Rune Knight":
                 case "Spellblade":
                 case "Squire":
                 case "Sword Saint":
@@ -196,9 +198,9 @@ namespace WOTV_FFBE
             finalValue = totalMainStat * (totalMainMultiplier / 100) * damageTypeResistanceVal * elementTypeResistanceVal * DEForSPRval * protectShellVal * singleAreaResistanceVal * totalFTHval * elementalAdvantageVal;
             FTHdamage.Text = Math.Truncate(finalValue).ToString();
 
-            //Add Critical Damage Up because now we're calculating damage if the attack were a crit.
+            // Add Critical Damage Up because now we're calculating damage if the attack were a crit.
             totalMainMultiplier += criticalDamageUpVal;
-            //Second verse same as the first
+            // Second verse same as the first
             finalValue = totalMainStat * (totalMainMultiplier / 100) * damageTypeResistanceVal * elementTypeResistanceVal * DEForSPRval * protectShellVal * singleAreaResistanceVal * BRVval * elementalAdvantageVal;
             BRVdamageCrit.Text = Math.Truncate(finalValue).ToString();
             finalValue = totalMainStat * (totalMainMultiplier / 100) * damageTypeResistanceVal * elementTypeResistanceVal * DEForSPRval * protectShellVal * singleAreaResistanceVal * totalFTHval * elementalAdvantageVal;
@@ -347,10 +349,10 @@ namespace WOTV_FFBE
                 {
                     // The temp storage string for each line that will be read
                     string x;
-                    // Ensures that both ListBoxes have the same index number
+                    // Ensure that both ListBoxes have the same index number
                     notesNumericValues.SetSelected(notesListBox.SelectedIndex, true);
                     notesText.Text = notesListBox.SelectedItem.ToString();
-                    // This flag will be used to have the StreamReader go to that exact line in the file
+                    // The following flag will be used to have the StreamReader go to that exact line in the file
                     // Now that I think about it, isn't flag already going to be what I need? Oh well. Filestreams are fun!
                     string flag = this.notesNumericValues.SelectedItem.ToString();
                     do{
@@ -421,7 +423,7 @@ namespace WOTV_FFBE
         private void aboutToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             string message = "A simple (for now) damage calculator made by Yurumates\nAll damage results have a margin of error of around 1%.";
-            string title = "About - Version MONT, THE BLOODLINE! featuring Lass";
+            string title = "About - Halloween Version";
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             _ = MessageBox.Show(message, title, buttons, MessageBoxIcon.Information);
         }
@@ -467,6 +469,18 @@ namespace WOTV_FFBE
         {
             effectiveHP effectiveHP = new effectiveHP();
             effectiveHP.Show();
+        }
+
+        private void builderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            characterBuilder characterBuilder = new characterBuilder();
+            characterBuilder.Show(this);
+        }
+
+        public void returnedValue(string objectName, string value) // This is going to return ALL the fields on damageCalculator AND hidden values
+        {
+            // Have fun
+            button1_Click(calculateButton, EventArgs.Empty);
         }
     }
 }
