@@ -163,6 +163,7 @@ namespace WOTV_FFBE
                     varAGI = 0.1;
                     varLCK = 0.05;
                     break;
+                case "Dragoon of Baron":
                 case "Knight":
                 case "Knight of Grandshelt (Ice)":
                 case "Knight of Ruin":
@@ -181,6 +182,7 @@ namespace WOTV_FFBE
                     break;
                 case "Ranger":
                 case "White Mage":
+                case "White Mage of Baron":
                 case "White Mage of Lapis":
                     varDEX = 0.15;
                     varLCK = 0.05;
@@ -428,7 +430,7 @@ namespace WOTV_FFBE
         private void aboutToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             string message = "A simple (for now) damage calculator made by Yurumates\nAll damage results have a margin of error of around 1%.";
-            string title = "About - Cecil Version";
+            string title = "About - FF4 Version";
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             _ = MessageBox.Show(message, title, buttons, MessageBoxIcon.Information);
         }

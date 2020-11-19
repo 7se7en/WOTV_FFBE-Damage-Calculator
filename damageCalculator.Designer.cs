@@ -149,6 +149,7 @@
             "Black Mage",
             "Cleric",
             "Dragoon",
+            "Dragoon of Baron",
             "Dual Gunner",
             "Fell Knight",
             "Green Mage",
@@ -185,6 +186,7 @@
             "Warrior",
             "Warrior of Light",
             "White Mage",
+            "White Mage of Baron",
             "White Mage of Lapis",
             "Winged One"});
             this.comboBox1.Location = new System.Drawing.Point(116, 134);
