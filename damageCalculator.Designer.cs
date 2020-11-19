@@ -161,6 +161,7 @@
             "Knight of Ruin",
             "Lancer",
             "Lord",
+            "Lunar Paladin",
             "Machinist",
             "Monk",
             "Ninja",

@@ -125,6 +125,11 @@ namespace WOTV_FFBE
                     varAGI = 0.1;
                     varLCK = 0.05;
                     break;
+                case "Lunar Paladin":
+                    varDEX = 0.075;
+                    varAGI = 0.1;
+                    varLCK = 0.075;
+                    break;
                 case "Dragoon":
                 case "Green Mage":
                 case "Time Mage":
@@ -423,7 +428,7 @@ namespace WOTV_FFBE
         private void aboutToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             string message = "A simple (for now) damage calculator made by Yurumates\nAll damage results have a margin of error of around 1%.";
-            string title = "About - Halloween Version";
+            string title = "About - Cecil Version";
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             _ = MessageBox.Show(message, title, buttons, MessageBoxIcon.Information);
         }
