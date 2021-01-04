@@ -181,6 +181,7 @@ namespace WOTV_FFBE
                     varLCK = 0.15;
                     break;
                 case "Ranger":
+                case "Sniper":
                 case "White Mage":
                 case "White Mage of Baron":
                 case "White Mage of Lapis":

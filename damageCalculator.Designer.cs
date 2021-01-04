@@ -173,6 +173,7 @@
             "Red Mage (Sword MAG)",
             "Rune Knight",
             "Samurai",
+            "Sniper",
             "Soldier",
             "Sorceress",
             "Spellblade",
