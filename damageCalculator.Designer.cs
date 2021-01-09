@@ -148,6 +148,7 @@
             "Assassin",
             "Black Mage",
             "Cleric",
+            "Dark Knight of Remorse",
             "Dragoon",
             "Dragoon of Baron",
             "Dual Gunner",

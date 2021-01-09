@@ -163,6 +163,7 @@ namespace WOTV_FFBE
                     varAGI = 0.1;
                     varLCK = 0.05;
                     break;
+                case "Dark Knight of Remorse":
                 case "Dragoon of Baron":
                 case "Knight":
                 case "Knight of Grandshelt (Ice)":
