@@ -169,9 +169,8 @@
             "Ninja",
             "Paladin",
             "Ranger",
-            "Red Mage (ATK)",
+            "Red Mage",
             "Red Mage (MAG)",
-            "Red Mage (Sword MAG)",
             "Rune Knight",
             "Samurai",
             "Sniper",
@@ -190,7 +189,9 @@
             "White Mage",
             "White Mage of Baron",
             "White Mage of Lapis",
-            "Winged One"});
+            "Winged One",
+            "YoRHa No.2 Type B",
+            "YoRHa No.9 Type S"});
             this.comboBox1.Location = new System.Drawing.Point(116, 134);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(142, 21);

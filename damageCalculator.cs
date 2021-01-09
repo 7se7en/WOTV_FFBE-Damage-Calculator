@@ -133,6 +133,7 @@ namespace WOTV_FFBE
                 case "Dragoon":
                 case "Green Mage":
                 case "Time Mage":
+                case "YoRHa No.9 Type S":
                     varDEX = 0.05;
                     varLCK = 0.15;
                     break;
@@ -145,13 +146,13 @@ namespace WOTV_FFBE
                 case "Fell Knight":
                 case "Holy Knight":
                 case "Lord":
-                case "Red Mage (ATK)":
-                case "Red Mage (Sword MAG)":
+                case "Red Mage":
                 case "Rune Knight":
                 case "Spellblade":
                 case "Squire":
                 case "Sword Saint":
                 case "Warrior":
+                case "YoRHa No.2 Type B":
                     varDEX = 0.25;
                     varAGI = 0.1;
                     varLCK = 0.1;
