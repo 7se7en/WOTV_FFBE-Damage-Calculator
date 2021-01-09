@@ -16,7 +16,7 @@ namespace WOTV_FFBE
         {
             InitializeComponent();
             this.Text = "Damage Calculator";
-            comboBox1.SelectedIndex = 0;
+            comboBox1.SelectedIndex = 1;
             elementAdvantage.SelectedIndex = 1;
             directoryMake();
             string notesLocation = Path.GetDirectoryName(Application.ExecutablePath) + "\\data\\Saved Notes.txt";
@@ -30,7 +30,8 @@ namespace WOTV_FFBE
                     }
                     reader.Close();
                 }
-            }            
+            }
+            jobToolTip.SetToolTip(comboBox1, "X% means that much of that stat will be included in damage calculations.");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -438,27 +439,63 @@ namespace WOTV_FFBE
             _ = MessageBox.Show(message, title, buttons, MessageBoxIcon.Information);
         }
 
+        private void comboBox1_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            Font myFont = new Font("Microsoft Sans Serif", 7.25F, FontStyle.Regular);
+            switch (e.Index)
+            {
+                case 0:
+                case 11:
+                case 22:
+                case 26:
+                case 29:
+                case 32:
+                case 34:
+                case 42:
+                case 48:
+                case 52:
+                case 54:e.Graphics.DrawString(comboBox1.Items[e.Index].ToString(), myFont, Brushes.DarkGray, e.Bounds);
+                        break; // Scroll down to fix the SelectedIndex numbers for Arithmetician
+                default:
+                    e.DrawBackground();
+                    e.Graphics.DrawString(comboBox1.Items[e.Index].ToString(), myFont, Brushes.Black, e.Bounds);
+                    e.DrawFocusRectangle();
+                    break;
+            }
+        }
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedIndex == 0) //Arithmetician
+            nicheBox.Text = "";
+            nicheLabel.Visible = false;
+            nicheBox.Visible = false;
+            nicheHelp.Visible = false;
+            switch (comboBox1.SelectedIndex)
             {
-                nicheLabel.Text = "Enemy Height";
-                nicheLabel.Visible = true;
-                nicheBox.Visible = true;
-                nicheHelp.Visible = true;
-            }
-            else
-            {
-                nicheBox.Text = "";
-                nicheLabel.Visible = false;
-                nicheBox.Visible = false;
-                nicheHelp.Visible = false;
-            }
+                case 0:
+                case 11:
+                case 22:
+                case 26:
+                case 29:
+                case 32:
+                case 34:
+                case 42:
+                case 48:
+                case 52:
+                case 54:comboBox1.SelectedIndex += 1;
+                        break;
+                case 35: //Arithmetician
+                        nicheLabel.Text = "Enemy Height";
+                        nicheLabel.Visible = true;
+                        nicheBox.Visible = true;
+                        nicheHelp.Visible = true;
+                        break;
+            }             
         }
 
         private void nicheHelp_Click(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedIndex == 0) //Arithmetician
+            if (comboBox1.SelectedIndex == 35) //Arithmetician
             {
                 string message = "This textbox is mainly for the move 'Height-Based' magic specifically. For Level 3/4 and Height 2/3 spells, NOT Height-Based, see wotv-calc for appropriate skill multipler values. Unlike 'Height-Based' magic, they do not get a scaling increase. They get a flat increase. Therefore, you can just input the adjusted number on your own.";
                 string title = "Arithmetician Height Help";

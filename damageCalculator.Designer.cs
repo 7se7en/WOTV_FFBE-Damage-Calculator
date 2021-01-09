@@ -110,6 +110,7 @@
             this.nicheLabel = new System.Windows.Forms.Label();
             this.nicheBox = new System.Windows.Forms.TextBox();
             this.nicheHelp = new System.Windows.Forms.Button();
+            this.jobToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1.SuspendLayout();
             this.dataListBoxRightMenu.SuspendLayout();
             this.SuspendLayout();
@@ -141,61 +142,75 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.DropDownWidth = 185;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Arithmetician",
-            "Assassin",
-            "Black Mage",
-            "Cleric",
+            "  120% ATK / Nothing Else",
             "Dark Knight of Remorse",
-            "Dragoon",
             "Dragoon of Baron",
-            "Dual Gunner",
-            "Fell Knight",
-            "Green Mage",
-            "Gunbreaker",
-            "Gunner",
-            "Holy Knight",
             "Knight",
-            "Knight of Grandshelt",
             "Knight of Grandshelt (Ice)",
             "Knight of Ruin",
-            "Lancer",
-            "Lord",
-            "Lunar Paladin",
-            "Machinist",
             "Monk",
-            "Ninja",
-            "Paladin",
-            "Ranger",
-            "Red Mage",
-            "Red Mage (MAG)",
-            "Rune Knight",
             "Samurai",
-            "Sniper",
             "Soldier",
-            "Sorceress",
+            "Viking",
+            "Winged One",
+            "  25% DEX / 10% AGI / 10% LUCK",
+            "Fell Knight",
+            "Holy Knight",
+            "Lord",
+            "Red Mage",
+            "Rune Knight",
             "Spellblade",
             "Squire",
-            "Staff Mage",
             "Sword Saint",
-            "Thief",
-            "Time Mage",
-            "Valkyrie",
-            "Viking",
             "Warrior",
-            "Warrior of Light",
+            "YoRHa No.2 Type B",
+            "  25% DEX / 5% LUCK",
+            "Dual Gunner",
+            "Gunner",
+            "Machinist",
+            "  20% DEX / 30% AGI",
+            "Assasin",
+            "Ninja",
+            "  20% DEX / 10% AGI / 15% LUCK",
+            "Lancer",
+            "Valkyrie",
+            "  15% DEX / 30% AGI",
+            "Thief",
+            "  15% DEX / 10% AGI / 5% LUCK",
+            "Arithmetician",
+            "Black Mage",
+            "Cleric",
+            "Knight of Grandshelt",
+            "Red Mage (MAG)",
+            "Sorceress",
+            "Staff Mage",
+            "  15% DEX / 5% LUCK",
+            "Ranger",
+            "Sniper",
             "White Mage",
             "White Mage of Baron",
             "White Mage of Lapis",
-            "Winged One",
-            "YoRHa No.2 Type B",
+            "  10% DEX / 10% AGI / 5% LUCK",
+            "Gunbreaker",
+            "Paladin",
+            "Warrior of Light",
+            "  7.5% DEX / 10% AGI / 7.5% LUCK",
+            "Lunar Paladin",
+            "  5% DEX / 15% LUCK",
+            "Dragoon",
+            "Green Mage",
+            "Time Mage",
             "YoRHa No.9 Type S"});
             this.comboBox1.Location = new System.Drawing.Point(116, 134);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(142, 21);
             this.comboBox1.TabIndex = 4;
+            this.comboBox1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.comboBox1_DrawItem);
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // dexStat
@@ -654,6 +669,7 @@
             this.builderToolStripMenuItem.Name = "builderToolStripMenuItem";
             this.builderToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
             this.builderToolStripMenuItem.Text = "Character Builder";
+            this.builderToolStripMenuItem.Visible = false;
             this.builderToolStripMenuItem.Click += new System.EventHandler(this.builderToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
@@ -839,6 +855,10 @@
             this.nicheHelp.Visible = false;
             this.nicheHelp.Click += new System.EventHandler(this.nicheHelp_Click);
             // 
+            // jobToolTip
+            // 
+            this.jobToolTip.AutomaticDelay = 1000;
+            // 
             // damageCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1010,5 +1030,6 @@
         private System.Windows.Forms.Button nicheHelp;
         private System.Windows.Forms.ToolStripMenuItem effectiveHPToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem builderToolStripMenuItem;
+        private System.Windows.Forms.ToolTip jobToolTip;
     }
 }

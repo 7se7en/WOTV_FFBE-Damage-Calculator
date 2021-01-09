@@ -83,6 +83,11 @@ namespace WOTV_FFBE
                     
                 }
             }
+            double.TryParse(textBox2.Text, out double tb2output);
+            if(tb2output >= 100)
+            {
+                label13.Text = "Nullify";
+            }                
         }
     }
 }
