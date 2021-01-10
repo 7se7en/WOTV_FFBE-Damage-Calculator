@@ -445,16 +445,16 @@ namespace WOTV_FFBE
             switch (e.Index)
             {
                 case 0:
-                case 11:
-                case 22:
-                case 26:
-                case 29:
-                case 32:
-                case 34:
-                case 42:
-                case 48:
-                case 52:
-                case 54:e.Graphics.DrawString(comboBox1.Items[e.Index].ToString(), myFont, Brushes.DarkGray, e.Bounds);
+                case 12:
+                case 23:
+                case 27:
+                case 30:
+                case 33:
+                case 35:
+                case 43:
+                case 49:
+                case 54:
+                case 56:e.Graphics.DrawString(comboBox1.Items[e.Index].ToString(), myFont, Brushes.DarkGray, e.Bounds);
                         break; // Scroll down to fix the SelectedIndex numbers for Arithmetician
                 default:
                     e.DrawBackground();
@@ -473,18 +473,18 @@ namespace WOTV_FFBE
             switch (comboBox1.SelectedIndex)
             {
                 case 0:
-                case 11:
-                case 22:
-                case 26:
-                case 29:
-                case 32:
-                case 34:
-                case 42:
-                case 48:
-                case 52:
-                case 54:comboBox1.SelectedIndex += 1;
+                case 12:
+                case 23:
+                case 27:
+                case 30:
+                case 33:
+                case 35:
+                case 43:
+                case 49:
+                case 54:
+                case 56:comboBox1.SelectedIndex += 1;
                         break;
-                case 35: //Arithmetician
+                case 36: //Arithmetician
                         nicheLabel.Text = "Enemy Height";
                         nicheLabel.Visible = true;
                         nicheBox.Visible = true;
