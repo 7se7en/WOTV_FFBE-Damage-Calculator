@@ -142,6 +142,8 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.DropDownWidth = 185;
@@ -187,7 +189,9 @@
             "Black Mage",
             "Cleric",
             "Knight of Grandshelt",
+            "Kotodama Wielder",
             "Red Mage (MAG)",
+            "Sage of Mysidia",
             "Sorceress",
             "Staff Mage",
             "  15% DEX / 5% LUCK",

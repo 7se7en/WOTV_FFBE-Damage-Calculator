@@ -119,7 +119,9 @@ namespace WOTV_FFBE
                 case "Black Mage":
                 case "Cleric":
                 case "Knight of Grandshelt":
+                case "Kotodama Wielder":
                 case "Red Mage (MAG)":
+                case "Sage of Mysidia":
                 case "Sorceress":
                 case "Staff Mage":
                     varDEX = 0.15;
@@ -216,6 +218,73 @@ namespace WOTV_FFBE
             BRVdamageCrit.Text = Math.Truncate(finalValue).ToString();
             finalValue = totalMainStat * (totalMainMultiplier / 100) * damageTypeResistanceVal * elementTypeResistanceVal * DEForSPRval * protectShellVal * singleAreaResistanceVal * totalFTHval * elementalAdvantageVal;
             FTHdamageCrit.Text = Math.Truncate(finalValue).ToString();
+        }
+
+        private void comboBox1_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            Font myFont = new Font("Microsoft Sans Serif", 7.25F, FontStyle.Regular);
+            switch (e.Index)
+            {
+                case 0:
+                case 12:
+                case 23:
+                case 27:
+                case 30:
+                case 33:
+                case 35:
+                case 43:
+                case 49:
+                case 54:
+                case 56:
+                    e.Graphics.DrawString(comboBox1.Items[e.Index].ToString(), myFont, Brushes.DarkGray, e.Bounds);
+                    break; // Scroll down to fix the SelectedIndex numbers for Arithmetician
+                default:
+                    e.DrawBackground();
+                    e.Graphics.DrawString(comboBox1.Items[e.Index].ToString(), myFont, Brushes.Black, e.Bounds);
+                    e.DrawFocusRectangle();
+                    break;
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            nicheBox.Text = "";
+            nicheLabel.Visible = false;
+            nicheBox.Visible = false;
+            nicheHelp.Visible = false;
+            switch (comboBox1.SelectedIndex)
+            {
+                case 0:
+                case 12:
+                case 23:
+                case 27:
+                case 30:
+                case 33:
+                case 35:
+                case 43:
+                case 49:
+                case 54:
+                case 56:
+                    comboBox1.SelectedIndex += 1;
+                    break;
+                case 36: //Arithmetician
+                    nicheLabel.Text = "Enemy Height";
+                    nicheLabel.Visible = true;
+                    nicheBox.Visible = true;
+                    nicheHelp.Visible = true;
+                    break;
+            }
+        }
+
+        private void nicheHelp_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == 36) //Arithmetician
+            {
+                string message = "This textbox is mainly for 'Height-Based' magic. An example of this would be 'Height-Based Water'. For Level 3/4 and Height 2/3 spells, NOT Height-Based, see wotv-calc for appropriate skill multipler values, and leave this textbox blank.";
+                string title = "Arithmetician Height Help";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                _ = MessageBox.Show(message, title, buttons, MessageBoxIcon.Information);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -439,70 +508,7 @@ namespace WOTV_FFBE
             _ = MessageBox.Show(message, title, buttons, MessageBoxIcon.Information);
         }
 
-        private void comboBox1_DrawItem(object sender, DrawItemEventArgs e)
-        {
-            Font myFont = new Font("Microsoft Sans Serif", 7.25F, FontStyle.Regular);
-            switch (e.Index)
-            {
-                case 0:
-                case 12:
-                case 23:
-                case 27:
-                case 30:
-                case 33:
-                case 35:
-                case 43:
-                case 49:
-                case 54:
-                case 56:e.Graphics.DrawString(comboBox1.Items[e.Index].ToString(), myFont, Brushes.DarkGray, e.Bounds);
-                        break; // Scroll down to fix the SelectedIndex numbers for Arithmetician
-                default:
-                    e.DrawBackground();
-                    e.Graphics.DrawString(comboBox1.Items[e.Index].ToString(), myFont, Brushes.Black, e.Bounds);
-                    e.DrawFocusRectangle();
-                    break;
-            }
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            nicheBox.Text = "";
-            nicheLabel.Visible = false;
-            nicheBox.Visible = false;
-            nicheHelp.Visible = false;
-            switch (comboBox1.SelectedIndex)
-            {
-                case 0:
-                case 12:
-                case 23:
-                case 27:
-                case 30:
-                case 33:
-                case 35:
-                case 43:
-                case 49:
-                case 54:
-                case 56:comboBox1.SelectedIndex += 1;
-                        break;
-                case 36: //Arithmetician
-                        nicheLabel.Text = "Enemy Height";
-                        nicheLabel.Visible = true;
-                        nicheBox.Visible = true;
-                        nicheHelp.Visible = true;
-                        break;
-            }             
-        }
-
-        private void nicheHelp_Click(object sender, EventArgs e)
-        {
-            if (comboBox1.SelectedIndex == 35) //Arithmetician
-            {
-                string message = "This textbox is mainly for the move 'Height-Based' magic specifically. For Level 3/4 and Height 2/3 spells, NOT Height-Based, see wotv-calc for appropriate skill multipler values. Unlike 'Height-Based' magic, they do not get a scaling increase. They get a flat increase. Therefore, you can just input the adjusted number on your own.";
-                string title = "Arithmetician Height Help";
-                MessageBoxButtons buttons = MessageBoxButtons.OK;
-                _ = MessageBox.Show(message, title, buttons, MessageBoxIcon.Information);
-            }
-        }
+        
 
         private void emeraldEchoInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
