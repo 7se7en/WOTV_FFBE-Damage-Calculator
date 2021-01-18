@@ -225,17 +225,17 @@ namespace WOTV_FFBE
             Font myFont = new Font("Microsoft Sans Serif", 7.25F, FontStyle.Regular);
             switch (e.Index)
             {
-                case 0:
-                case 12:
-                case 23:
-                case 27:
-                case 30:
-                case 33:
-                case 35:
-                case 43:
-                case 49:
-                case 54:
-                case 56:
+                case 0:     //120% ATK
+                case 12:    //25% DEX / 10% AGI / 10% LUCK
+                case 23:    //25% DEX / 5% LUCK
+                case 27:    //20% DEX / 30% AGI
+                case 30:    //20% DEX / 10% AGI / 15% LUCK
+                case 33:    //15% DEX / 30% AGI
+                case 35:    //15% DEX / 10% AGI / 5% LUCK
+                case 45:    //15% DEX / 5% LUCK
+                case 51:    //10% DEX / 10% AGI / 5% LUCK
+                case 56:    //7.5% DEX / 10% AGI / 7.5% LUCK
+                case 58:    //5% DEX / 15% LUCK
                     e.Graphics.DrawString(comboBox1.Items[e.Index].ToString(), myFont, Brushes.DarkGray, e.Bounds);
                     break; // Scroll down to fix the SelectedIndex numbers for Arithmetician
                 default:
