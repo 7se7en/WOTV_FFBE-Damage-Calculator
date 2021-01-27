@@ -641,7 +641,6 @@
             // accuracyAndEvasionToolStripMenuItem
             // 
             this.accuracyAndEvasionToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.accuracyAndEvasionToolStripMenuItem.Enabled = false;
             this.accuracyAndEvasionToolStripMenuItem.Name = "accuracyAndEvasionToolStripMenuItem";
             this.accuracyAndEvasionToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.accuracyAndEvasionToolStripMenuItem.Text = "&Accuracy and Evasion";

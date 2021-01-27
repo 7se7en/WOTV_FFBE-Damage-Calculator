@@ -145,9 +145,9 @@
             // finalResult
             // 
             this.finalResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.finalResult.Location = new System.Drawing.Point(163, 38);
+            this.finalResult.Location = new System.Drawing.Point(163, 32);
             this.finalResult.Name = "finalResult";
-            this.finalResult.Size = new System.Drawing.Size(228, 72);
+            this.finalResult.Size = new System.Drawing.Size(203, 72);
             this.finalResult.TabIndex = 41;
             this.finalResult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -155,7 +155,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(163, 116);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(228, 46);
+            this.button1.Size = new System.Drawing.Size(203, 46);
             this.button1.TabIndex = 6;
             this.button1.Text = "&Calculate";
             this.button1.UseVisualStyleBackColor = true;
@@ -174,7 +174,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(403, 174);
+            this.ClientSize = new System.Drawing.Size(378, 174);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.finalResult);

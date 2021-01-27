@@ -30,16 +30,28 @@ namespace WOTV_FFBE
             double.TryParse(textBox6.Text, out double theirAGI);
             double.TryParse(textBox7.Text, out double theirEvasion);
 
-            double finalAccuracy = Math.Truncate(yourDEX / 4) + Math.Truncate(yourLUCK / 2.5) + yourAccuracy;
-            double finalEvasion = Math.Truncate(theirLUCK / 2.5) + Math.Truncate(theirAGI / 2) + theirEvasion;
+            yourDEX = Math.Pow(yourDEX, 0.2);
+            Console.WriteLine(yourDEX);
+            yourDEX = (yourDEX * 11) / 20;
+            Console.WriteLine(yourDEX);
+            yourLUCK = Math.Pow(yourLUCK, 0.96);
+            Console.WriteLine(yourLUCK);
+            yourLUCK /= 200;
+            Console.WriteLine(yourLUCK);
+            double finalAccuracy = yourDEX + yourLUCK + yourAccuracy/100;
+            Console.WriteLine(finalAccuracy);
+            finalAccuracy -= 1;
 
-            if(finalAccuracy - finalEvasion <= 0)
-            {
-                finalResult.Text = "0%";
-            } else
-            {
-                finalResult.Text = (finalAccuracy - finalEvasion).ToString() + "%";
-            }            
+            theirAGI = Math.Pow(theirAGI, 0.9);
+            theirAGI = (theirAGI * 11) / 1000;
+            theirLUCK = Math.Pow(theirLUCK, 0.96);
+            theirLUCK /= 200;
+            double finalEvasion = theirAGI + theirLUCK + theirEvasion/100;
+            finalEvasion -= 1;
+
+            double result = (finalAccuracy - finalEvasion) * 100;
+
+            finalResult.Text = String.Format("{0:n0}%", result);
         }
     }
 }
