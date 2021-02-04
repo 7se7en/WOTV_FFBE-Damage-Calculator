@@ -173,6 +173,7 @@ namespace WOTV_FFBE
                 case "Knight of Grandshelt (Ice)":
                 case "Knight of Ruin":
                 case "Monk":
+                case "Pugilist":
                 case "Samurai":
                 case "Soldier":
                 case "Viking":
@@ -226,16 +227,16 @@ namespace WOTV_FFBE
             switch (e.Index)
             {
                 case 0:     //120% ATK
-                case 12:    //25% DEX / 10% AGI / 10% LUCK
-                case 23:    //25% DEX / 5% LUCK
-                case 27:    //20% DEX / 30% AGI
-                case 30:    //20% DEX / 10% AGI / 15% LUCK
-                case 33:    //15% DEX / 30% AGI
-                case 35:    //15% DEX / 10% AGI / 5% LUCK
-                case 45:    //15% DEX / 5% LUCK
-                case 51:    //10% DEX / 10% AGI / 5% LUCK
-                case 56:    //7.5% DEX / 10% AGI / 7.5% LUCK
-                case 58:    //5% DEX / 15% LUCK
+                case 13:    //25% DEX / 10% AGI / 10% LUCK
+                case 24:    //25% DEX / 5% LUCK
+                case 28:    //20% DEX / 30% AGI
+                case 31:    //20% DEX / 10% AGI / 15% LUCK
+                case 34:    //15% DEX / 30% AGI
+                case 36:    //15% DEX / 10% AGI / 5% LUCK
+                case 46:    //15% DEX / 5% LUCK
+                case 52:    //10% DEX / 10% AGI / 5% LUCK
+                case 57:    //7.5% DEX / 10% AGI / 7.5% LUCK
+                case 59:    //5% DEX / 15% LUCK
                     e.Graphics.DrawString(comboBox1.Items[e.Index].ToString(), myFont, Brushes.DarkGray, e.Bounds);
                     break; // Scroll down to fix the SelectedIndex numbers for Arithmetician
                 default:
@@ -255,19 +256,19 @@ namespace WOTV_FFBE
             switch (comboBox1.SelectedIndex)
             {
                 case 0:
-                case 12:
-                case 23:
-                case 27:
-                case 30:
-                case 33:
-                case 35:
-                case 43:
-                case 49:
-                case 54:
-                case 56:
+                case 13:
+                case 24:
+                case 28:
+                case 31:
+                case 34:
+                case 36:
+                case 44:
+                case 50:
+                case 55:
+                case 57:
                     comboBox1.SelectedIndex += 1;
                     break;
-                case 36: //Arithmetician
+                case 37: //Arithmetician
                     nicheLabel.Text = "Enemy Height";
                     nicheLabel.Visible = true;
                     nicheBox.Visible = true;
@@ -278,7 +279,7 @@ namespace WOTV_FFBE
 
         private void nicheHelp_Click(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedIndex == 36) //Arithmetician
+            if (comboBox1.SelectedIndex == 37) //Arithmetician
             {
                 string message = "This textbox is mainly for 'Height-Based' magic. An example of this would be 'Height-Based Water'. For Level 3/4 and Height 2/3 spells, NOT Height-Based, see wotv-calc for appropriate skill multipler values, and leave this textbox blank.";
                 string title = "Arithmetician Height Help";
@@ -503,7 +504,7 @@ namespace WOTV_FFBE
         private void aboutToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             string message = "A simple (for now) damage calculator made by Yurumates\nAll damage results have a margin of error of around 1%.";
-            string title = "About - Aoi Yuuki Version";
+            string title = "About - Best Class in FFXIV Version";
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             _ = MessageBox.Show(message, title, buttons, MessageBoxIcon.Information);
         }

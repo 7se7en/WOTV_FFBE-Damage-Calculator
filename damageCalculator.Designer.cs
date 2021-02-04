@@ -157,6 +157,7 @@
             "Knight of Grandshelt (Ice)",
             "Knight of Ruin",
             "Monk",
+            "Pugilist",
             "Samurai",
             "Soldier",
             "Viking",
