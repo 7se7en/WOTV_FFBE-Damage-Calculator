@@ -24,7 +24,7 @@ namespace WOTV_FFBE
                 using (var reader = new StreamReader(notesLocation)){
                     string line;
                     while ((line = reader.ReadLine()) != null){
-                        this.Size = new Size(980, 616);
+                        this.Size = new Size(980, 631);
                         notesListBox.Items.Add(line.ToString());
                         notesNumericValues.Items.Add(reader.ReadLine().ToString());
                     }
@@ -91,13 +91,20 @@ namespace WOTV_FFBE
             DEForSPRval = (100 - DEForSPRval)/100;
             double.TryParse(BRVStat.Text, out double BRVval);
             BRVval += 50;
-            if(BRVval == 50) { BRVval = 0; } // If the user left their BRV blank, do this. You can't do damage below 10 BRV anyway because chicken
+            if(BRVval <= 59) { BRVval = 0; } // If the user left their BRV blank, do this. You can't do damage below 10 BRV because chicken mode
             BRVval /= 100;
             double.TryParse(FTHStat.Text, out double FTHval);
             double.TryParse(EFTHStat.Text, out double EFTHval);
             double totalFTHval = (FTHval + EFTHval) / 100;
             double.TryParse(elementAdvantage.SelectedItem.ToString(), out double elementalAdvantageVal);
             elementalAdvantageVal /= 100;
+
+            // Chain
+            double.TryParse(typeChainStat.Text, out double typeChainVal);
+            double.TryParse(elementChainStat.Text, out double elementChainVal);
+            double totalChain = typeChainVal + elementChainVal;
+            if(totalChain >= 20) { totalChain = 20; }
+            double chainMultiplier = totalChain * 0.2 + 1;
 
             // Niche calculations for case-by-case scenarios
             double.TryParse(nicheBox.Text, out double nicheVal);
@@ -207,17 +214,17 @@ namespace WOTV_FFBE
             double totalMainStat = mainStatVal + dexVal + agiVal + luckVal;
             double totalMainMultiplier = skillMultiplierVal + damageTypeUpVal + elementTypeUpVal + totalKillerVal;
 
-            double finalValue = totalMainStat * (totalMainMultiplier/100) * damageTypeResistanceVal * elementTypeResistanceVal * DEForSPRval * protectShellVal * singleAreaResistanceVal * BRVval * elementalAdvantageVal;
+            double finalValue = totalMainStat * (totalMainMultiplier/100) * damageTypeResistanceVal * elementTypeResistanceVal * DEForSPRval * protectShellVal * singleAreaResistanceVal * BRVval * elementalAdvantageVal * chainMultiplier;
             BRVdamage.Text = Math.Truncate(finalValue).ToString();
-            finalValue = totalMainStat * (totalMainMultiplier / 100) * damageTypeResistanceVal * elementTypeResistanceVal * DEForSPRval * protectShellVal * singleAreaResistanceVal * totalFTHval * elementalAdvantageVal;
+            finalValue = totalMainStat * (totalMainMultiplier / 100) * damageTypeResistanceVal * elementTypeResistanceVal * DEForSPRval * protectShellVal * singleAreaResistanceVal * totalFTHval * elementalAdvantageVal * chainMultiplier;
             FTHdamage.Text = Math.Truncate(finalValue).ToString();
 
             // Add Critical Damage Up because now we're calculating damage if the attack were a crit.
             totalMainMultiplier += criticalDamageUpVal;
             // Second verse same as the first
-            finalValue = totalMainStat * (totalMainMultiplier / 100) * damageTypeResistanceVal * elementTypeResistanceVal * DEForSPRval * protectShellVal * singleAreaResistanceVal * BRVval * elementalAdvantageVal;
+            finalValue = totalMainStat * (totalMainMultiplier / 100) * damageTypeResistanceVal * elementTypeResistanceVal * DEForSPRval * protectShellVal * singleAreaResistanceVal * BRVval * elementalAdvantageVal * chainMultiplier;
             BRVdamageCrit.Text = Math.Truncate(finalValue).ToString();
-            finalValue = totalMainStat * (totalMainMultiplier / 100) * damageTypeResistanceVal * elementTypeResistanceVal * DEForSPRval * protectShellVal * singleAreaResistanceVal * totalFTHval * elementalAdvantageVal;
+            finalValue = totalMainStat * (totalMainMultiplier / 100) * damageTypeResistanceVal * elementTypeResistanceVal * DEForSPRval * protectShellVal * singleAreaResistanceVal * totalFTHval * elementalAdvantageVal * chainMultiplier;
             FTHdamageCrit.Text = Math.Truncate(finalValue).ToString();
         }
 
@@ -322,7 +329,7 @@ namespace WOTV_FFBE
         {
             directoryMake();
             string completedLine = "";
-            this.Size = new Size(980, 616);
+            this.Size = new Size(980, 631);
             notesListBox.Items.Add(notesText.Text);
             // Fill all empty textboxes with 0. This prepares the data that will be added to the data listbox to look like 0:0:0:0 instead of ::::
             this.Controls.OfType<TextBox>().ToList().ForEach(x =>
@@ -414,7 +421,7 @@ namespace WOTV_FFBE
                 notesNumericValues.Items.RemoveAt(index);
             }
             if (notesListBox.Items.Count == 0){
-                this.Size = new Size(453, 613);
+                this.Size = new Size(453, 631);
             }
         }
 
@@ -436,45 +443,55 @@ namespace WOTV_FFBE
                     // The following flag will be used to have the StreamReader go to that exact line in the file
                     // Now that I think about it, isn't flag already going to be what I need? Oh well. Filestreams are fun!
                     string flag = this.notesNumericValues.SelectedItem.ToString();
-                    do{
+                    do
+                    {
                         x = reader.ReadLine();
-                        if(x == null){
+                        if (x == null)
+                        {
                             //Exits the DOWHILE loop if the end of the file is reached
                             return;
                         }
                     } while (x != flag);
                     reader.Close();
+                    Console.WriteLine(x);
                     // Segments the line we went to by the delimiters, colons, into an array of strings that will be siphoned into the form's fields
                     string[] fieldValues = x.Split(':');
                     int count = 0;
                     // You're going to love this
                     int ghettoRig = 0;
                     // Go through every single item in the form
-                    foreach (Control item in this.Controls.Cast<Control>().OrderBy(c => c.TabIndex)){
-                        if(fieldValues[count] == "end"){
-                        // If the string is "end", we've reached the end of the line and don't need to fill any more fields
+                    foreach (Control item in this.Controls.Cast<Control>().OrderBy(c => c.TabIndex))
+                    {
+                        if (fieldValues[count] == "end")
+                        {
+                            // If the string is "end", we've reached the end of the line and don't need to fill any more fields
                             button1_Click(calculateButton, EventArgs.Empty);
                             // With our newly populated fields, let's hit the Calculate button again
                             return;
                         }
-                        if (item is TextBox){
+                        if (item is TextBox)
+                        {
                             // As we go through all the forms, check what they are, textbox or combobox
                             ((TextBox)item).Text = fieldValues[count];
                             // Set the currently internally-selected Textbox to whatever is stored in the current fieldValues array
                             count++;
                         }
-                        if (item is ComboBox){
+                        if (item is ComboBox)
+                        {
                             // Here we go.
-                            if(ghettoRig == 0){
+                            if (ghettoRig == 0)
+                            {
                                 // I'm stubborn. I put the ComboBox values at the end of the line, but the foreach loop isn't at the end of the
                                 // line yet. So, in order to have the string array match the location of the ComboBox values, we'll need to skip
                                 // ahead temporarily...
-                                count += 19;
+                                count += 21;
                                 ((ComboBox)item).SelectedIndex = ((ComboBox)item).FindStringExact(fieldValues[count]);
                                 // ...and then return to where we left off.
-                                count -= 19;
+                                count -= 21;
                                 ghettoRig++;
-                            } else if(ghettoRig == 1){
+                            }
+                            else if (ghettoRig == 1)
+                            {
                                 // You'll also notice that the ComboBoxes are far away from each other. As such, their TabOrder is very different
                                 // At this point, the foreach loop is at the second ComboBox, but the string array is at the wrong value. So...
                                 count++;
@@ -482,12 +499,12 @@ namespace WOTV_FFBE
                                 ((ComboBox)item).SelectedIndex = ((ComboBox)item).FindStringExact(fieldValues[count]);
                                 // And now it should be at "end"
                                 count++;
-                            }                            
+                            }
                         }
                     }
-                    
+
                 }
-            }            
+            }
         }
 
         private void debuffSuccessChanceToolStripMenuItem_Click(object sender, EventArgs e)

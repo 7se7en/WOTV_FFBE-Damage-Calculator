@@ -111,6 +111,9 @@
             this.nicheBox = new System.Windows.Forms.TextBox();
             this.nicheHelp = new System.Windows.Forms.Button();
             this.jobToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.label29 = new System.Windows.Forms.Label();
+            this.typeChainStat = new System.Windows.Forms.TextBox();
+            this.elementChainStat = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.dataListBoxRightMenu.SuspendLayout();
             this.SuspendLayout();
@@ -301,28 +304,28 @@
             this.damageTypeResistanceStat.Location = new System.Drawing.Point(341, 30);
             this.damageTypeResistanceStat.Name = "damageTypeResistanceStat";
             this.damageTypeResistanceStat.Size = new System.Drawing.Size(86, 20);
-            this.damageTypeResistanceStat.TabIndex = 16;
+            this.damageTypeResistanceStat.TabIndex = 18;
             // 
             // elementTypeResistanceStat
             // 
             this.elementTypeResistanceStat.Location = new System.Drawing.Point(341, 56);
             this.elementTypeResistanceStat.Name = "elementTypeResistanceStat";
             this.elementTypeResistanceStat.Size = new System.Drawing.Size(86, 20);
-            this.elementTypeResistanceStat.TabIndex = 17;
+            this.elementTypeResistanceStat.TabIndex = 19;
             // 
             // DEForSPRStat
             // 
             this.DEForSPRStat.Location = new System.Drawing.Point(341, 82);
             this.DEForSPRStat.Name = "DEForSPRStat";
             this.DEForSPRStat.Size = new System.Drawing.Size(86, 20);
-            this.DEForSPRStat.TabIndex = 18;
+            this.DEForSPRStat.TabIndex = 20;
             // 
             // BRVStat
             // 
             this.BRVStat.Location = new System.Drawing.Point(341, 161);
             this.BRVStat.Name = "BRVStat";
             this.BRVStat.Size = new System.Drawing.Size(86, 20);
-            this.BRVStat.TabIndex = 21;
+            this.BRVStat.TabIndex = 23;
             this.BRVStat.Text = "97";
             // 
             // FTHStat
@@ -330,14 +333,14 @@
             this.FTHStat.Location = new System.Drawing.Point(341, 187);
             this.FTHStat.Name = "FTHStat";
             this.FTHStat.Size = new System.Drawing.Size(86, 20);
-            this.FTHStat.TabIndex = 22;
+            this.FTHStat.TabIndex = 24;
             // 
             // EFTHStat
             // 
             this.EFTHStat.Location = new System.Drawing.Point(341, 213);
             this.EFTHStat.Name = "EFTHStat";
             this.EFTHStat.Size = new System.Drawing.Size(86, 20);
-            this.EFTHStat.TabIndex = 23;
+            this.EFTHStat.TabIndex = 25;
             // 
             // label6
             // 
@@ -449,12 +452,13 @@
             this.elementAdvantage.Location = new System.Drawing.Point(341, 239);
             this.elementAdvantage.Name = "elementAdvantage";
             this.elementAdvantage.Size = new System.Drawing.Size(86, 21);
-            this.elementAdvantage.TabIndex = 24;
+            this.elementAdvantage.TabIndex = 26;
             // 
             // BRVdamage
             // 
+            this.BRVdamage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.BRVdamage.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BRVdamage.Location = new System.Drawing.Point(9, 372);
+            this.BRVdamage.Location = new System.Drawing.Point(9, 398);
             this.BRVdamage.Name = "BRVdamage";
             this.BRVdamage.Size = new System.Drawing.Size(200, 73);
             this.BRVdamage.TabIndex = 37;
@@ -462,18 +466,20 @@
             // 
             // calculateButton
             // 
-            this.calculateButton.Location = new System.Drawing.Point(265, 265);
+            this.calculateButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.calculateButton.Location = new System.Drawing.Point(265, 276);
             this.calculateButton.Name = "calculateButton";
             this.calculateButton.Size = new System.Drawing.Size(162, 59);
-            this.calculateButton.TabIndex = 25;
+            this.calculateButton.TabIndex = 27;
             this.calculateButton.Text = "&Calculate";
             this.calculateButton.UseVisualStyleBackColor = true;
             this.calculateButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // FTHdamage
             // 
+            this.FTHdamage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.FTHdamage.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FTHdamage.Location = new System.Drawing.Point(9, 459);
+            this.FTHdamage.Location = new System.Drawing.Point(9, 485);
             this.FTHdamage.Name = "FTHdamage";
             this.FTHdamage.Size = new System.Drawing.Size(200, 73);
             this.FTHdamage.TabIndex = 39;
@@ -481,8 +487,9 @@
             // 
             // label17
             // 
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(9, 359);
+            this.label17.Location = new System.Drawing.Point(9, 385);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(112, 13);
             this.label17.TabIndex = 40;
@@ -490,8 +497,9 @@
             // 
             // label18
             // 
+            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(9, 446);
+            this.label18.Location = new System.Drawing.Point(9, 472);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(111, 13);
             this.label18.TabIndex = 41;
@@ -499,8 +507,9 @@
             // 
             // BRVdamageCrit
             // 
+            this.BRVdamageCrit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.BRVdamageCrit.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BRVdamageCrit.Location = new System.Drawing.Point(227, 372);
+            this.BRVdamageCrit.Location = new System.Drawing.Point(227, 398);
             this.BRVdamageCrit.Name = "BRVdamageCrit";
             this.BRVdamageCrit.Size = new System.Drawing.Size(200, 73);
             this.BRVdamageCrit.TabIndex = 42;
@@ -508,8 +517,9 @@
             // 
             // FTHdamageCrit
             // 
+            this.FTHdamageCrit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.FTHdamageCrit.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FTHdamageCrit.Location = new System.Drawing.Point(227, 459);
+            this.FTHdamageCrit.Location = new System.Drawing.Point(227, 485);
             this.FTHdamageCrit.Name = "FTHdamageCrit";
             this.FTHdamageCrit.Size = new System.Drawing.Size(200, 73);
             this.FTHdamageCrit.TabIndex = 43;
@@ -517,8 +527,9 @@
             // 
             // label21
             // 
+            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(231, 359);
+            this.label21.Location = new System.Drawing.Point(231, 385);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(38, 13);
             this.label21.TabIndex = 44;
@@ -558,10 +569,11 @@
             // 
             // resetButton
             // 
-            this.resetButton.Location = new System.Drawing.Point(265, 325);
+            this.resetButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.resetButton.Location = new System.Drawing.Point(265, 341);
             this.resetButton.Name = "resetButton";
             this.resetButton.Size = new System.Drawing.Size(162, 26);
-            this.resetButton.TabIndex = 26;
+            this.resetButton.TabIndex = 28;
             this.resetButton.Text = "&Reset";
             this.resetButton.UseVisualStyleBackColor = true;
             this.resetButton.Click += new System.EventHandler(this.button2_Click);
@@ -571,14 +583,14 @@
             this.singleAreaResistanceStat.Location = new System.Drawing.Point(341, 108);
             this.singleAreaResistanceStat.Name = "singleAreaResistanceStat";
             this.singleAreaResistanceStat.Size = new System.Drawing.Size(86, 20);
-            this.singleAreaResistanceStat.TabIndex = 19;
+            this.singleAreaResistanceStat.TabIndex = 21;
             // 
             // protectShellStat
             // 
             this.protectShellStat.Location = new System.Drawing.Point(341, 134);
             this.protectShellStat.Name = "protectShellStat";
             this.protectShellStat.Size = new System.Drawing.Size(86, 20);
-            this.protectShellStat.TabIndex = 20;
+            this.protectShellStat.TabIndex = 22;
             // 
             // label22
             // 
@@ -709,8 +721,9 @@
             // 
             // label26
             // 
+            this.label26.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(12, 538);
+            this.label26.Location = new System.Drawing.Point(12, 564);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(30, 13);
             this.label26.TabIndex = 55;
@@ -718,17 +731,19 @@
             // 
             // notesText
             // 
-            this.notesText.Location = new System.Drawing.Point(45, 534);
+            this.notesText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.notesText.Location = new System.Drawing.Point(45, 560);
             this.notesText.Name = "notesText";
             this.notesText.Size = new System.Drawing.Size(323, 20);
-            this.notesText.TabIndex = 27;
+            this.notesText.TabIndex = 29;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(374, 533);
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button3.Location = new System.Drawing.Point(374, 559);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(53, 22);
-            this.button3.TabIndex = 28;
+            this.button3.TabIndex = 30;
             this.button3.Text = "&Add ->";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.addToList_Click);
@@ -739,7 +754,7 @@
             this.notesListBox.HorizontalScrollbar = true;
             this.notesListBox.Location = new System.Drawing.Point(441, 30);
             this.notesListBox.Name = "notesListBox";
-            this.notesListBox.Size = new System.Drawing.Size(510, 524);
+            this.notesListBox.Size = new System.Drawing.Size(510, 550);
             this.notesListBox.TabIndex = 56;
             this.notesListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notesListBox_MouseDoubleClick);
             this.notesListBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.notesListBox_MouseDown);
@@ -865,11 +880,37 @@
             // 
             this.jobToolTip.AutomaticDelay = 1000;
             // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(76, 359);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(34, 13);
+            this.label29.TabIndex = 67;
+            this.label29.Text = "Chain";
+            // 
+            // typeChainStat
+            // 
+            this.typeChainStat.Location = new System.Drawing.Point(163, 356);
+            this.typeChainStat.Name = "typeChainStat";
+            this.typeChainStat.Size = new System.Drawing.Size(37, 20);
+            this.typeChainStat.TabIndex = 16;
+            // 
+            // elementChainStat
+            // 
+            this.elementChainStat.Location = new System.Drawing.Point(210, 356);
+            this.elementChainStat.Name = "elementChainStat";
+            this.elementChainStat.Size = new System.Drawing.Size(36, 20);
+            this.elementChainStat.TabIndex = 17;
+            // 
             // damageCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(437, 574);
+            this.ClientSize = new System.Drawing.Size(437, 592);
+            this.Controls.Add(this.elementChainStat);
+            this.Controls.Add(this.typeChainStat);
+            this.Controls.Add(this.label29);
             this.Controls.Add(this.nicheHelp);
             this.Controls.Add(this.nicheBox);
             this.Controls.Add(this.nicheLabel);
@@ -1037,5 +1078,8 @@
         private System.Windows.Forms.ToolStripMenuItem effectiveHPToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem builderToolStripMenuItem;
         private System.Windows.Forms.ToolTip jobToolTip;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox typeChainStat;
+        private System.Windows.Forms.TextBox elementChainStat;
     }
 }
