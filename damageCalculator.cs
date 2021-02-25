@@ -153,6 +153,7 @@ namespace WOTV_FFBE
                     varDEX = 0.25;
                     varLCK = 0.05;
                     break;
+                case "Energist":
                 case "Fell Knight":
                 case "Holy Knight":
                 case "Lord":
@@ -180,6 +181,7 @@ namespace WOTV_FFBE
                 case "Knight of Grandshelt (Ice)":
                 case "Knight of Ruin":
                 case "Monk":
+                case "Nightblade":
                 case "Pugilist":
                 case "Samurai":
                 case "Soldier":
@@ -235,15 +237,15 @@ namespace WOTV_FFBE
             {
                 case 0:     //120% ATK
                 case 13:    //25% DEX / 10% AGI / 10% LUCK
-                case 24:    //25% DEX / 5% LUCK
-                case 28:    //20% DEX / 30% AGI
-                case 31:    //20% DEX / 10% AGI / 15% LUCK
-                case 34:    //15% DEX / 30% AGI
-                case 36:    //15% DEX / 10% AGI / 5% LUCK
-                case 46:    //15% DEX / 5% LUCK
-                case 52:    //10% DEX / 10% AGI / 5% LUCK
-                case 57:    //7.5% DEX / 10% AGI / 7.5% LUCK
-                case 59:    //5% DEX / 15% LUCK
+                case 25:    //25% DEX / 5% LUCK
+                case 29:    //20% DEX / 30% AGI
+                case 32:    //20% DEX / 10% AGI / 15% LUCK
+                case 35:    //15% DEX / 30% AGI
+                case 37:    //15% DEX / 10% AGI / 5% LUCK
+                case 47:    //15% DEX / 5% LUCK
+                case 53:    //10% DEX / 10% AGI / 5% LUCK
+                case 58:    //7.5% DEX / 10% AGI / 7.5% LUCK
+                case 60:    //5% DEX / 15% LUCK
                     e.Graphics.DrawString(comboBox1.Items[e.Index].ToString(), myFont, Brushes.DarkGray, e.Bounds);
                     break; // Scroll down to fix the SelectedIndex numbers for Arithmetician
                 default:
@@ -264,18 +266,18 @@ namespace WOTV_FFBE
             {
                 case 0:
                 case 13:
-                case 24:
-                case 28:
-                case 31:
-                case 34:
-                case 36:
-                case 44:
-                case 50:
-                case 55:
-                case 57:
+                case 25:
+                case 29:
+                case 32:
+                case 35:
+                case 37:
+                case 45:
+                case 51:
+                case 56:
+                case 58:
                     comboBox1.SelectedIndex += 1;
                     break;
-                case 37: //Arithmetician
+                case 38: //Arithmetician
                     nicheLabel.Text = "Enemy Height";
                     nicheLabel.Visible = true;
                     nicheBox.Visible = true;
@@ -286,7 +288,7 @@ namespace WOTV_FFBE
 
         private void nicheHelp_Click(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedIndex == 37) //Arithmetician
+            if (comboBox1.SelectedIndex == 38) //Arithmetician
             {
                 string message = "This textbox is mainly for 'Height-Based' magic. An example of this would be 'Height-Based Water'. For Level 3/4 and Height 2/3 spells, NOT Height-Based, see wotv-calc for appropriate skill multipler values, and leave this textbox blank.";
                 string title = "Arithmetician Height Help";
@@ -309,14 +311,6 @@ namespace WOTV_FFBE
         {
             criticalChanceCalculator criticalChanceCalculator = new criticalChanceCalculator(dexStat.Text);
             criticalChanceCalculator.Show();
-        }
-
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            string message = "A simple (for now) damage calculator made by Yurumates\nAll damage results have a margin of error of around 1%.\nPlease join Rage.";
-            string title = "About";
-            MessageBoxButtons buttons = MessageBoxButtons.OK;
-            _ = MessageBox.Show(message, title, buttons, MessageBoxIcon.Information);
         }
 
         private void accuracyAndEvasionToolStripMenuItem_Click(object sender, EventArgs e)
@@ -521,7 +515,7 @@ namespace WOTV_FFBE
         private void aboutToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             string message = "A simple (for now) damage calculator made by Yurumates\nAll damage results have a margin of error of around 1%.";
-            string title = "About - Best Class in FFXIV Version";
+            string title = "About - Tiny Hands and Third Wheel Edition";
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             _ = MessageBox.Show(message, title, buttons, MessageBoxIcon.Information);
         }
