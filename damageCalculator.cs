@@ -149,6 +149,7 @@ namespace WOTV_FFBE
                     break;
                 case "Dual Gunner":
                 case "Gunner":
+                case "Gunner (FFVIIR)":
                 case "Machinist":
                     varDEX = 0.25;
                     varLCK = 0.05;
@@ -183,10 +184,12 @@ namespace WOTV_FFBE
                 case "Knight of Ruin":
                 case "Legendary Guardian":
                 case "Monk":
+                case "Monk (FFVIIR)":
                 case "Nightblade":
                 case "Pugilist":
                 case "Samurai":
                 case "Soldier":
+                case "Soldier (FFVIIR)":
                 case "Viking":
                 case "Winged One":
                     varMAIN = 1.2;
@@ -201,6 +204,7 @@ namespace WOTV_FFBE
                 case "Sniper":
                 case "Summoner of Spira":
                 case "White Mage":
+                case "White Mage (FFVIIR)":
                 case "White Mage of Baron":
                 case "White Mage of Lapis":
                     varDEX = 0.15;
@@ -239,16 +243,16 @@ namespace WOTV_FFBE
             switch (e.Index)
             {
                 case 0:     //120% ATK
-                case 14:    //25% DEX / 10% AGI / 10% LUCK
-                case 27:    //25% DEX / 5% LUCK
-                case 31:    //20% DEX / 30% AGI
-                case 34:    //20% DEX / 10% AGI / 15% LUCK
-                case 37:    //15% DEX / 30% AGI
-                case 39:    //15% DEX / 10% AGI / 5% LUCK
-                case 49:    //15% DEX / 5% LUCK
-                case 56:    //10% DEX / 10% AGI / 5% LUCK
-                case 61:    //7.5% DEX / 10% AGI / 7.5% LUCK
-                case 63:    //5% DEX / 15% LUCK
+                case 16:    //25% DEX / 10% AGI / 10% LUCK
+                case 29:    //25% DEX / 5% LUCK
+                case 34:    //20% DEX / 30% AGI
+                case 37:    //20% DEX / 10% AGI / 15% LUCK
+                case 40:    //15% DEX / 30% AGI
+                case 42:    //15% DEX / 10% AGI / 5% LUCK
+                case 52:    //15% DEX / 5% LUCK
+                case 60:    //10% DEX / 10% AGI / 5% LUCK
+                case 65:    //7.5% DEX / 10% AGI / 7.5% LUCK
+                case 67:    //5% DEX / 15% LUCK
                     e.Graphics.DrawString(comboBox1.Items[e.Index].ToString(), myFont, Brushes.DarkGray, e.Bounds);
                     break; // Scroll down to fix the SelectedIndex numbers for Arithmetician
                 default:
@@ -268,19 +272,19 @@ namespace WOTV_FFBE
             switch (comboBox1.SelectedIndex)
             {
                 case 0:
-                case 14:
-                case 27:
-                case 31:
+                case 16:
+                case 29:
                 case 34:
                 case 37:
-                case 39:
-                case 49:
-                case 56:
-                case 61:
-                case 63:
+                case 40:
+                case 42:
+                case 52:
+                case 60:
+                case 65:
+                case 67:
                     comboBox1.SelectedIndex += 1;
                     break;
-                case 40: //Arithmetician
+                case 43: //Arithmetician
                     nicheLabel.Text = "Enemy Height";
                     nicheLabel.Visible = true;
                     nicheBox.Visible = true;
@@ -291,7 +295,7 @@ namespace WOTV_FFBE
 
         private void nicheHelp_Click(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedIndex == 40) //Arithmetician
+            if (comboBox1.SelectedIndex == 43) //Arithmetician
             {
                 string message = "This textbox is mainly for 'Height-Based' magic. An example of this would be 'Height-Based Water'. For Level 3/4 and Height 2/3 spells, NOT Height-Based, see wotv-calc for appropriate skill multipler values, and leave this textbox blank.";
                 string title = "Arithmetician Height Help";
@@ -518,7 +522,7 @@ namespace WOTV_FFBE
         private void aboutToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             string message = "A simple (for now) damage calculator made by Yurumates\nAll damage results have a margin of error of around 1%.";
-            string title = "About - HAHAHA Edition";
+            string title = "About - \"These aren't even new classes...\" Edition";
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             _ = MessageBox.Show(message, title, buttons, MessageBoxIcon.Information);
         }
