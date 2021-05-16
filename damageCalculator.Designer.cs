@@ -689,15 +689,6 @@
             this.effectiveHPToolStripMenuItem.Text = "&Effective HP";
             this.effectiveHPToolStripMenuItem.Click += new System.EventHandler(this.effectiveHPToolStripMenuItem_Click);
             // 
-            // builderToolStripMenuItem
-            // 
-            this.builderToolStripMenuItem.Enabled = false;
-            this.builderToolStripMenuItem.Name = "builderToolStripMenuItem";
-            this.builderToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
-            this.builderToolStripMenuItem.Text = "Character Builder";
-            this.builderToolStripMenuItem.Visible = false;
-            this.builderToolStripMenuItem.Click += new System.EventHandler(this.builderToolStripMenuItem_Click);
-            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {

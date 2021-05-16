@@ -543,12 +543,6 @@ namespace WOTV_FFBE
             effectiveHP.Show();
         }
 
-        private void builderToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            characterBuilder characterBuilder = new characterBuilder();
-            characterBuilder.Show(this);
-        }
-
         public void returnedValue(string objectName, string value) // This is going to return ALL the fields on damageCalculator AND hidden values
         {
             // Have fun

@@ -98,12 +98,6 @@
     <Compile Include="accuracyAndEvasion.Designer.cs">
       <DependentUpon>accuracyAndEvasion.cs</DependentUpon>
     </Compile>
-    <Compile Include="characterBuilder.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="characterBuilder.Designer.cs">
-      <DependentUpon>characterBuilder.cs</DependentUpon>
-    </Compile>
     <Compile Include="criticalChanceCalculator.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,12 +109,6 @@
     </Compile>
     <Compile Include="damageCalculator.Designer.cs">
       <DependentUpon>damageCalculator.cs</DependentUpon>
-    </Compile>
-    <Compile Include="databaseCreator.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="databaseCreator.Designer.cs">
-      <DependentUpon>databaseCreator.cs</DependentUpon>
     </Compile>
     <Compile Include="debuffSuccessChance.cs">
       <SubType>Form</SubType>
@@ -139,17 +127,11 @@
     <EmbeddedResource Include="accuracyAndEvasion.resx">
       <DependentUpon>accuracyAndEvasion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="characterBuilder.resx">
-      <DependentUpon>characterBuilder.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="criticalChanceCalculator.resx">
       <DependentUpon>criticalChanceCalculator.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="damageCalculator.resx">
       <DependentUpon>damageCalculator.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="databaseCreator.resx">
-      <DependentUpon>databaseCreator.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="debuffSuccessChance.resx">
       <DependentUpon>debuffSuccessChance.cs</DependentUpon>
