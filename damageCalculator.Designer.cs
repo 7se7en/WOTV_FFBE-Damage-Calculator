@@ -202,6 +202,7 @@
             "Kotodama Wielder",
             "Red Mage (MAG)",
             "Sage of Mysidia",
+            "Scholar",
             "Sorceress",
             "Staff Mage",
             "  15% DEX / 5% LUCK",
@@ -688,6 +689,11 @@
             this.effectiveHPToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.effectiveHPToolStripMenuItem.Text = "&Effective HP";
             this.effectiveHPToolStripMenuItem.Click += new System.EventHandler(this.effectiveHPToolStripMenuItem_Click);
+            // 
+            // builderToolStripMenuItem
+            // 
+            this.builderToolStripMenuItem.Name = "builderToolStripMenuItem";
+            this.builderToolStripMenuItem.Size = new System.Drawing.Size(12, 20);
             // 
             // helpToolStripMenuItem
             // 

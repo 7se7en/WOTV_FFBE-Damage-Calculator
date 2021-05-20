@@ -129,6 +129,7 @@ namespace WOTV_FFBE
                 case "Kotodama Wielder":
                 case "Red Mage (MAG)":
                 case "Sage of Mysidia":
+                case "Scholar":
                 case "Sorceress":
                 case "Staff Mage":
                     varDEX = 0.15;
@@ -249,10 +250,10 @@ namespace WOTV_FFBE
                 case 37:    //20% DEX / 10% AGI / 15% LUCK
                 case 40:    //15% DEX / 30% AGI
                 case 42:    //15% DEX / 10% AGI / 5% LUCK
-                case 52:    //15% DEX / 5% LUCK
-                case 60:    //10% DEX / 10% AGI / 5% LUCK
-                case 65:    //7.5% DEX / 10% AGI / 7.5% LUCK
-                case 67:    //5% DEX / 15% LUCK
+                case 53:    //15% DEX / 5% LUCK
+                case 61:    //10% DEX / 10% AGI / 5% LUCK
+                case 66:    //7.5% DEX / 10% AGI / 7.5% LUCK
+                case 68:    //5% DEX / 15% LUCK
                     e.Graphics.DrawString(comboBox1.Items[e.Index].ToString(), myFont, Brushes.DarkGray, e.Bounds);
                     break; // Scroll down to fix the SelectedIndex numbers for Arithmetician
                 default:
@@ -278,10 +279,10 @@ namespace WOTV_FFBE
                 case 37:
                 case 40:
                 case 42:
-                case 52:
-                case 60:
-                case 65:
-                case 67:
+                case 53:
+                case 61:
+                case 66:
+                case 68:
                     comboBox1.SelectedIndex += 1;
                     break;
                 case 43: //Arithmetician
@@ -522,7 +523,7 @@ namespace WOTV_FFBE
         private void aboutToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             string message = "A simple (for now) damage calculator made by Yurumates\nAll damage results have a margin of error of around 1%.";
-            string title = "About - \"These aren't even new classes...\" Edition";
+            string title = "About - \"Large Leela\" Edition";
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             _ = MessageBox.Show(message, title, buttons, MessageBoxIcon.Information);
         }
