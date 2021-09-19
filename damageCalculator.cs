@@ -124,12 +124,14 @@ namespace WOTV_FFBE
                     break;
                 case "Arithmetician":
                 case "Black Mage":
+                case "Black-Robed Witch":
                 case "Cleric":
                 case "Knight of Grandshelt":
                 case "Kotodama Wielder":
                 case "Red Mage (MAG)":
                 case "Sage of Mysidia":
                 case "Scholar":
+                case "Silver-Maned Princess":
                 case "Sorceress":
                 case "Staff Mage":
                     varDEX = 0.15;
@@ -173,6 +175,7 @@ namespace WOTV_FFBE
                     break;
                 case "Gunbreaker":
                 case "Paladin":
+                case "Knight of the Sacred Shield":
                 case "Warrior of Light":
                     varDEX = 0.1;
                     varAGI = 0.1;
@@ -191,6 +194,7 @@ namespace WOTV_FFBE
                 case "Samurai":
                 case "Soldier":
                 case "Soldier (FFVIIR)":
+                case "Strider":
                 case "Viking":
                 case "Winged One":
                     varMAIN = 1.2;
@@ -244,16 +248,16 @@ namespace WOTV_FFBE
             switch (e.Index)
             {
                 case 0:     //120% ATK
-                case 16:    //25% DEX / 10% AGI / 10% LUCK
-                case 29:    //25% DEX / 5% LUCK
-                case 34:    //20% DEX / 30% AGI
-                case 37:    //20% DEX / 10% AGI / 15% LUCK
-                case 40:    //15% DEX / 30% AGI
-                case 42:    //15% DEX / 10% AGI / 5% LUCK
-                case 53:    //15% DEX / 5% LUCK
-                case 61:    //10% DEX / 10% AGI / 5% LUCK
-                case 66:    //7.5% DEX / 10% AGI / 7.5% LUCK
-                case 68:    //5% DEX / 15% LUCK
+                case 17:    //25% DEX / 10% AGI / 10% LUCK
+                case 30:    //25% DEX / 5% LUCK
+                case 35:    //20% DEX / 30% AGI
+                case 38:    //20% DEX / 10% AGI / 15% LUCK
+                case 41:    //15% DEX / 30% AGI
+                case 43:    //15% DEX / 10% AGI / 5% LUCK
+                case 56:    //15% DEX / 5% LUCK
+                case 64:    //10% DEX / 10% AGI / 5% LUCK
+                case 70:    //7.5% DEX / 10% AGI / 7.5% LUCK
+                case 72:    //5% DEX / 15% LUCK
                     e.Graphics.DrawString(comboBox1.Items[e.Index].ToString(), myFont, Brushes.DarkGray, e.Bounds);
                     break; // Scroll down to fix the SelectedIndex numbers for Arithmetician
                 default:
@@ -273,19 +277,19 @@ namespace WOTV_FFBE
             switch (comboBox1.SelectedIndex)
             {
                 case 0:
-                case 16:
-                case 29:
-                case 34:
-                case 37:
-                case 40:
-                case 42:
-                case 53:
-                case 61:
-                case 66:
-                case 68:
+                case 17:
+                case 30:
+                case 35:
+                case 38:
+                case 41:
+                case 43:
+                case 56:
+                case 64:
+                case 70:
+                case 72:
                     comboBox1.SelectedIndex += 1;
                     break;
-                case 43: //Arithmetician
+                case 44: //Arithmetician
                     nicheLabel.Text = "Enemy Height";
                     nicheLabel.Visible = true;
                     nicheBox.Visible = true;
@@ -296,7 +300,7 @@ namespace WOTV_FFBE
 
         private void nicheHelp_Click(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedIndex == 43) //Arithmetician
+            if (comboBox1.SelectedIndex == 44) //Arithmetician
             {
                 string message = "This textbox is mainly for 'Height-Based' magic. An example of this would be 'Height-Based Water'. For Level 3/4 and Height 2/3 spells, NOT Height-Based, see wotv-calc for appropriate skill multipler values, and leave this textbox blank.";
                 string title = "Arithmetician Height Help";
