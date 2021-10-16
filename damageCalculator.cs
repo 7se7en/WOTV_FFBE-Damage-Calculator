@@ -151,6 +151,7 @@ namespace WOTV_FFBE
                     varLCK = 0.15;
                     break;
                 case "Dual Gunner":
+                case "King of the Stags":
                 case "Gunner":
                 case "Gunner (FFVIIR)":
                 case "Machinist":
@@ -160,6 +161,7 @@ namespace WOTV_FFBE
                 case "Abes' Star Player":
                 case "Energist":
                 case "Fell Knight":
+                case "Fencer":
                 case "Holy Knight":
                 case "Lord":
                 case "Red Mage":
@@ -249,15 +251,15 @@ namespace WOTV_FFBE
             {
                 case 0:     //120% ATK
                 case 17:    //25% DEX / 10% AGI / 10% LUCK
-                case 30:    //25% DEX / 5% LUCK
-                case 35:    //20% DEX / 30% AGI
-                case 38:    //20% DEX / 10% AGI / 15% LUCK
-                case 41:    //15% DEX / 30% AGI
-                case 43:    //15% DEX / 10% AGI / 5% LUCK
-                case 56:    //15% DEX / 5% LUCK
-                case 64:    //10% DEX / 10% AGI / 5% LUCK
-                case 70:    //7.5% DEX / 10% AGI / 7.5% LUCK
-                case 72:    //5% DEX / 15% LUCK
+                case 31:    //25% DEX / 5% LUCK
+                case 37:    //20% DEX / 30% AGI
+                case 40:    //20% DEX / 10% AGI / 15% LUCK
+                case 43:    //15% DEX / 30% AGI
+                case 45:    //15% DEX / 10% AGI / 5% LUCK
+                case 58:    //15% DEX / 5% LUCK
+                case 66:    //10% DEX / 10% AGI / 5% LUCK
+                case 72:    //7.5% DEX / 10% AGI / 7.5% LUCK
+                case 74:    //5% DEX / 15% LUCK
                     e.Graphics.DrawString(comboBox1.Items[e.Index].ToString(), myFont, Brushes.DarkGray, e.Bounds);
                     break; // Scroll down to fix the SelectedIndex numbers for Arithmetician
                 default:
@@ -274,22 +276,22 @@ namespace WOTV_FFBE
             nicheLabel.Visible = false;
             nicheBox.Visible = false;
             nicheHelp.Visible = false;
-            switch (comboBox1.SelectedIndex)
+            switch (comboBox1.SelectedIndex) // just copy and paste the above
             {
-                case 0:
-                case 17:
-                case 30:
-                case 35:
-                case 38:
-                case 41:
-                case 43:
-                case 56:
-                case 64:
-                case 70:
-                case 72:
+                case 0:     //120% ATK
+                case 17:    //25% DEX / 10% AGI / 10% LUCK
+                case 31:    //25% DEX / 5% LUCK
+                case 37:    //20% DEX / 30% AGI
+                case 40:    //20% DEX / 10% AGI / 15% LUCK
+                case 43:    //15% DEX / 30% AGI
+                case 45:    //15% DEX / 10% AGI / 5% LUCK
+                case 58:    //15% DEX / 5% LUCK
+                case 66:    //10% DEX / 10% AGI / 5% LUCK
+                case 72:    //7.5% DEX / 10% AGI / 7.5% LUCK
+                case 74:    //5% DEX / 15% LUCK
                     comboBox1.SelectedIndex += 1;
                     break;
-                case 44: //Arithmetician
+                case 46: //Arithmetician
                     nicheLabel.Text = "Enemy Height";
                     nicheLabel.Visible = true;
                     nicheBox.Visible = true;
@@ -300,7 +302,7 @@ namespace WOTV_FFBE
 
         private void nicheHelp_Click(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedIndex == 44) //Arithmetician
+            if (comboBox1.SelectedIndex == 46) //Arithmetician
             {
                 string message = "This textbox is mainly for 'Height-Based' magic. An example of this would be 'Height-Based Water'. For Level 3/4 and Height 2/3 spells, NOT Height-Based, see wotv-calc for appropriate skill multipler values, and leave this textbox blank.";
                 string title = "Arithmetician Height Help";
@@ -527,7 +529,7 @@ namespace WOTV_FFBE
         private void aboutToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             string message = "A simple (for now) damage calculator made by Yurumates\nAll damage results have a margin of error of around 1%.";
-            string title = "About - \"Large Leela\" Edition";
+            string title = "About - Jyushimatsu Edition";
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             _ = MessageBox.Show(message, title, buttons, MessageBoxIcon.Information);
         }
